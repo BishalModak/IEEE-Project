@@ -2,7 +2,7 @@ import React from 'react';
 
 const JoinUs = () => {
     return (
-        <section className="bg-yellow-100 py-12 flex justify-center">
+        <section className=" py-12 flex justify-center">
             <div className="bg-white p-8 w-full max-w-3xl shadow-lg rounded">
                 <h2 className="text-center text-3xl font-bold text-[#045C99] mb-6">IEEE Membership Registration</h2>
 

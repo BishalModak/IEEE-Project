@@ -129,9 +129,9 @@ const SignIn = () => {
 
               <p className="text-center text-sm text-gray-600 mt-4">
                 Create an account{' '}
-                <Link to="/signup" className="text-blue-600 hover:underline">
+                <a href='/signup' className="text-blue-600 hover:underline">
                   Sign Up
-                </Link>
+                </a>
               </p>
             </form>
           </div>

@@ -49,7 +49,7 @@ const News = () => {
                             </div>
                             <h3 className="text-xl font-semibold px-4">{news.title}</h3>
                             <p className="px-4 py-2 text-gray-700">{news.desc}</p>
-                            <Link to={`/news/${news.id}`} className="text-[#045C99] px-4 hover:underline">Read More</Link>
+                            <a href={`/news/${news.id}`} className="text-[#045C99] px-4 hover:underline">Read More</a>
                         </div>
                     ))}
                 </div>

@@ -47,6 +47,7 @@ import IEERegion10 from "./IEEE/IEERegion10.jsx";
 import IEEELU from "./IEEE/IEEELU.jsx";
 import IEEEBangladesh from "./IEEE/IEEEBangladesh.jsx";
 import SingleNews from "./News/SingleNews.jsx";
+import UserPage from "./UserPage/UserPage.jsx";
 
 
 const router = createBrowserRouter([
@@ -95,7 +96,7 @@ const router = createBrowserRouter([
         path: '/gallery',
         element: <Gallery></Gallery>
       },
-      
+
       {
         path: '/researchPapers',
         element: <ResearchPapers></ResearchPapers>
@@ -176,7 +177,7 @@ const router = createBrowserRouter([
         path: '/webmaster',
         element: <Webmaster></Webmaster>
       },
-      
+
       {
         path: '/graphics-design-executive',
         element: <GraphicsDesign></GraphicsDesign>
@@ -205,18 +206,7 @@ const router = createBrowserRouter([
         path: '/news/:id',
         loader: () => fetch('/News.json'),
         element: <SingleNews></SingleNews>
-      }
-
-      
-
-
-
-
-
-
-
-
-
+      },
 
     ]
 
@@ -234,9 +224,13 @@ const router = createBrowserRouter([
     path: '/signup',
     element: <SignUp></SignUp>
   },
-  
+  {
+    path: '/user',
+    element: <UserPage></UserPage>
+  },
 
-  
+
+
 ]);
 
 

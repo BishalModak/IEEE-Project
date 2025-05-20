@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { FaCalendarDays, FaUser } from 'react-icons/fa6';
 
 const Blog = () => {
+
+    const [datas, setData] = useState([]);
+
+    useEffect(() => {
+        fetch('/News.json')
+            .then(res => res.json())
+            .then(data => setData(data));
+    }, [])
     return (
         <>
             {/* Blog Title */}
@@ -40,29 +49,23 @@ const Blog = () => {
 
                     {/* Blog Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {/* Blog 1 */}
-                        <div className="shadow-md rounded-lg pb-4">
-                            <img src="img/blog1.png" alt="Robotics Workshop" className="w-full h-[150px] object-cover rounded-t-lg" />
-                            <div className="flex gap-4 p-2 text-sm text-gray-600">
-                                <p><i className="fa-solid fa-calendar-days"></i> date</p>
-                                <p><i className="fa-solid fa-user"></i> Full Name</p>
-                            </div>
-                            <h3 className="px-5 font-semibold">Robotics Workshop Highlights</h3>
-                            <p className="px-5 text-sm text-gray-700">A detailed recap of our recent robotics workshop featuring hands-on experience with cutting-edge technology and expert insights...</p>
-                            <a href="#" className="text-[#045C99]  px-5 hover:underline inline-block mt-2">Read More</a>
-                        </div>
+                        {/* Blog  */}
 
-                        {/* Blog 2 */}
-                        <div className="shadow-md rounded-lg pb-4">
-                            <img src="img/blog2.png" alt="AI Advances" className="w-full h-[150px] object-cover rounded-t-lg" />
-                            <div className="flex gap-4 p-2 text-sm text-gray-600">
-                                <p><i className="fa-solid fa-calendar-days"></i> date</p>
-                                <p><i className="fa-solid fa-user"></i> Full Name</p>
-                            </div>
-                            <h3 className="px-5 font-semibold">Latest Advancements in Artificial Intelligence</h3>
-                            <p className="px-5 text-sm text-gray-700">Exploring the cutting-edge developments in AI and their potential impact on various industries. A comprehensive look at machine learning algorithms...</p>
-                            <a href="#" className="text-[#045C99]  px-5 hover:underline inline-block mt-2">Read More</a>
-                        </div>
+                        
+                            {datas.map((news, i) => (
+                                <div key={i} className="shadow-md rounded-lg pb-4 overflow-hidden">
+                                    <img src={news.img} alt={news.title} className="h-40 w-full object-cover" />
+                                    <div className="flex gap-6 p-3 text-sm text-gray-500">
+                                        <p><FaCalendarDays className="inline mr-1" /> Date</p>
+                                        <p><FaUser className="inline mr-1" /> Full Name</p>
+                                    </div>
+                                    <h3 className="text-xl font-semibold px-4">{news.title}</h3>
+                                    <p className="px-4 py-2 text-gray-700">{news.desc}</p>
+                                    <a href={`/news/${news.id}`} className="text-[#045C99] px-4 hover:underline">Read More</a>
+                                </div>
+                            ))}
+                        
+
                     </div>
                 </div>
 
