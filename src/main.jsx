@@ -46,6 +46,7 @@ import VideoContent from './Video Content Executive/VideoContent';
 import IEERegion10 from "./IEEE/IEERegion10.jsx";
 import IEEELU from "./IEEE/IEEELU.jsx";
 import IEEEBangladesh from "./IEEE/IEEEBangladesh.jsx";
+import SingleNews from "./News/SingleNews.jsx";
 
 
 const router = createBrowserRouter([
@@ -200,6 +201,11 @@ const router = createBrowserRouter([
         path: '/IEEE-Bangladesh-section',
         element: <IEEEBangladesh></IEEEBangladesh>
       },
+      {
+        path: '/news/:id',
+        loader: () => fetch('/News.json'),
+        element: <SingleNews></SingleNews>
+      }
 
       
 
@@ -228,6 +234,9 @@ const router = createBrowserRouter([
     path: '/signup',
     element: <SignUp></SignUp>
   },
+  
+
+  
 ]);
 
 

@@ -1,49 +1,141 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const SignIn = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    memberType: 'local',
+    password: '',
+    confirmPassword: ''
+  });
+  const handleChange = (e) => {
+    const { name, value, type } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: type === 'radio' ? e.target.id : value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission logic here
+    console.log('Form submitted:', formData);
+  };
+
   return (
-    <section className="relative h-[772px] w-full">
-      {/* Background Image */}
-      <img
-        src="img/portal.gif"
-        alt="IEEE Portal"
-        className="w-full h-full object-cover absolute inset-0 z-0"
-      />
+    <section className="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+      <div className="max-w-lg w-full ">
+          <div className="text-center mb-6">
+            <h1 className="text-3xl font-semibold mb-2">Welcome Back</h1>
+            <p className="text-gray-600 mb-6">
+              Join us and be part of a vibrant community. Sign up now to unlock exclusive content and features!
+            </p>
+          </div>
+        <div className="bg-white p-6 text-center  rounded-lg shadow-lg overflow-hidden">
 
-      {/* Sign In Form Overlay */}
-      <div className="absolute top-[100px] left-1/2 transform -translate-x-1/2 w-[90%] md:w-[40%] bg-black/60 text-white p-10 text-center z-10 rounded-md shadow-md">
-        <img src="img/ieeelogo.png" alt="IEEE Logo" className="w-[100px] h-[100px] mx-auto" />
-        <h1 className="text-2xl font-semibold py-2">Sign In</h1>
-        <p className="text-sm">
-          I don't have an account!{' '}
-          <Link to={"/signup"} className="text-blue-400 hover:underline">
-            Sign Up
-          </Link>
-        </p>
+          <div className="bg-white p-6 rounded-lg">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="text-left">
+                <label htmlFor="name" className="block mb-2 text-gray-700">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Name"
+                  className="w-full border border-gray-300 rounded p-2"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
 
-        <form className="flex flex-col gap-5 w-[70%] mx-auto mt-5">
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Your IEEE ID"
-            className="p-2 rounded-md bg-black border border-blue-500 text-white placeholder:text-white"
-          />
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Enter Password"
-            className="p-2 rounded-md bg-black border border-blue-500 text-white placeholder:text-white"
-          />
-          <button
-            type="submit"
-            className="p-2 rounded-md bg-blue-500 text-white border border-blue-500 hover:bg-transparent hover:text-white transition-all"
-          >
-            Submit
-          </button>
-        </form>
+              <div className="text-left">
+                <label htmlFor="email" className="block mb-2 text-gray-700">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email"
+                  className="w-full border border-gray-300 rounded p-2"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="text-left">
+                <label className="block mb-2 text-gray-700">Member type</label>
+                <div className="space-y-2">
+                  <div className="flex items-center">
+                    <input
+                      type="radio"
+                      id="global"
+                      name="memberType"
+                      className="mr-2"
+                      checked={formData.memberType === 'global'}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="global" className="text-gray-700">Global Member</label>
+                  </div>
+                  <div className="flex items-center">
+                    <input
+                      type="radio"
+                      id="local"
+                      name="memberType"
+                      className="mr-2"
+                      checked={formData.memberType === 'local'}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor="local" className="text-gray-700">Local Member</label>
+                  </div>
+                </div>
+              </div>
+
+              <div className="text-left">
+                <label htmlFor="password" className="block mb-2 text-gray-700">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                  className="w-full border border-gray-300 rounded p-2"
+                  value={formData.password}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="text-left">
+                <label htmlFor="confirmPassword" className="block mb-2 text-gray-700">Confirm Password</label>
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  placeholder="Confirm Password"
+                  className="w-full border border-gray-300 rounded p-2"
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full bg-[#045C99] hover:bg-blue-700 text-white py-2 px-4 rounded"
+              >
+                Register
+              </button>
+
+              <p className="text-center text-sm text-gray-600 mt-4">
+                Create an account{' '}
+                <Link to="/signup" className="text-blue-600 hover:underline">
+                  Sign Up
+                </Link>
+              </p>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
   );

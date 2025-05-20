@@ -108,8 +108,8 @@ const Navbar = () => {
                     <div className="flex items-center gap-4">
                         <img src="../../public/img/ieee_logo.png" alt="IEEE Logo" className=" w-50 mr-4" />
                     </div>
-                    <li><a href="/" className='md:text-xl text-2xl lg:text-[18px] '><span className={`hover:text-black ${isHomeActive
-                        ? "text-black border-b-2 border-black"
+                    <li><a href="/" className='md:text-xl text-2xl lg:text-[18px] '><span className={`hover:text-blue-300 ${isHomeActive
+                        ? "text-blue-300 border-b-2 border-blue-300"
                         : "text-white"
                         }`}>Home</span></a></li>
 
@@ -119,8 +119,8 @@ const Navbar = () => {
                         <button onMouseEnter={() => setIsActivitiesOpen(!isActivitiesOpen)} onMouseLeave={() => setIsActivitiesOpen(!isActivitiesOpen)} className="md:text-xl text-2xl lg:text-[18px]">
                             <div className='flex items-center gap-2'>
                                 <span
-                                    className={`hover:text-black ${isEventsActive || isNewsActive || isAchievementActive
-                                        ? "text-black border-b-2 border-black"
+                                    className={`hover:text-blue-300 ${isEventsActive || isNewsActive || isAchievementActive
+                                        ? "text-blue-300 border-b-2 border-blue-300"
                                         : "text-white"
                                         }`}
                                 >
@@ -162,8 +162,8 @@ const Navbar = () => {
                         <button onMouseEnter={() => setIsMembersOpen(!isMembersOpen)} onMouseLeave={() => setIsMembersOpen(!isMembersOpen)} className="md:text-xl text-2xl lg:text-[18px]">
                             <div className='flex items-center gap-2'>
                                 <span
-                                    className={`hover:text-black ${isPanelActive || isvolunteersActive || isPNCActive || isdevelopersActive || isPCActive || isPublicityCoordinatorActive || isCREActive || isPEActive || isLEActive || isACMActive || isMDCActive || isWEBActive || isGDEActive || isVCEActive
-                                        ? "text-black border-b-2 border-black"
+                                    className={`hover:text-blue-300 ${isPanelActive || isvolunteersActive || isPNCActive || isdevelopersActive || isPCActive || isPublicityCoordinatorActive || isCREActive || isPEActive || isLEActive || isACMActive || isMDCActive || isWEBActive || isGDEActive || isVCEActive
+                                        ? "text-blue-300 border-b-2 border-blue-300"
                                         : "text-white"
                                         }`}
                                 >
@@ -236,13 +236,13 @@ const Navbar = () => {
                         <button onMouseEnter={() => setIsAboutOpen(!isAboutOpen)} onMouseLeave={() => setIsAboutOpen(!isAboutOpen)} className="md:text-xl text-2xl lg:text-[18px]">
                             <div className='flex items-center gap-2'>
                                 <span
-                                    className={`hover:text-black ${isjoinActive ||
+                                    className={`hover:text-blue-300 ${isjoinActive ||
                                         isIEEEActive ||
                                         isIEEERegion10Active ||
                                         isIEEEBangladeshsectionActive ||
                                         isIEEELUBRANCHActive ||
                                         isfaqActive
-                                        ? "text-black border-b-2 border-black"
+                                        ? "text-blue-300 border-b-2 border-blue-300"
                                         : "text-white"
                                         }`}
                                 >
@@ -296,12 +296,12 @@ const Navbar = () => {
                         <button onMouseEnter={() => setIsPublicationsOpen(!isPublicationsOpen)} onMouseLeave={() => setIsPublicationsOpen(!isPublicationsOpen)} className="md:text-xl text-2xl lg:text-[18px]">
                             <div className='flex items-center gap-2'>
                                 <span
-                                    className={`hover:text-black ${isblogActive ||
+                                    className={`hover:text-blue-300 ${isblogActive ||
                                         isresearchPapersActive ||
                                         ismegazineActive ||
                                         isgalleryActive ||
                                         istoolkitActive
-                                        ? "text-black border-b-2 border-black"
+                                        ? "text-blue-300 border-b-2 border-blue-300"
                                         : "text-white"
                                         }`}
                                 >
@@ -345,14 +345,14 @@ const Navbar = () => {
                         </div>
                     </li>
 
-                    <li><Link to={"/contact"} className='md:text-xl text-2xl lg:text-[18px]' ><span className={`hover:text-black ${iscontactActive ? "text-black border-b-2  border-black " : "text-white "} `}>Contact</span></Link></li>
+                    <li><Link to={"/contact"} className='md:text-xl text-2xl lg:text-[18px]' ><span className={`hover:text-blue-300 ${iscontactActive ? "text-black border-b-2  border-black " : "text-white "} `}>Contact</span></Link></li>
 
                     <li className="relative group">
                         <button onMouseEnter={() => setIsGetInvolvedOpen(!isGetInvolvedOpen)} onMouseLeave={() => setIsGetInvolvedOpen(!isGetInvolvedOpen)} className="md:text-xl text-2xl lg:text-[18px]">
                             <div className='flex items-center gap-2'>
                                 <span
-                                    className={`hover:text-black ${isAddActive || isWriteBlogActive
-                                        ? "text-black border-b-2 border-black"
+                                    className={`hover:text-blue-300 ${isAddActive || isWriteBlogActive
+                                        ? "text-blue-300 border-b-2 border-blue-300"
                                         : "text-white"
                                         }`}
                                 >

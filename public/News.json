@@ -1,0 +1,28 @@
+[
+    {   "id": 1,
+        "img": "/img/blog1.png",
+        "title": "Robotics Workshop Highlights",
+        "desc": "A detailed recap of our recent robotics workshop featuring hands-on experience with cutting-edge technology, expert insights, and real-time demonstrations of autonomous systems. Attendees had the opportunity to build and test their own robotic modules, gaining valuable practical skills and networking with professionals in the field.",
+        "date": "2025-05-15",
+        "author": "Dr. Arman Hossain",
+        "tags": [
+            "Robotics",
+            "Workshop",
+            "Technology",
+            "STEM"
+        ]
+    },
+    {   "id": 2,
+        "img": "/img/blog2.png",
+        "title": "Latest Advancements in Artificial Intelligence",
+        "desc": "Exploring the cutting-edge developments in AI and their potential impact on various industries. This article covers the evolution of machine learning algorithms, breakthroughs in natural language processing, and the ethical implications of AI deployment in real-world systems like healthcare and education.",
+        "date": "2025-05-12",
+        "author": "Sadia Rahman",
+        "tags": [
+            "AI",
+            "Machine Learning",
+            "Technology",
+            "Innovation"
+        ]
+    }
+]

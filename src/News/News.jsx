@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaCalendarDays, FaUser } from "react-icons/fa6";
 import { FaFacebook, FaLinkedin } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const News = () => {
+
+    const [datas, setData] = useState([]);
+
+    useEffect(() => {
+        fetch('/News.json')
+            .then(res => res.json())
+            .then(data => setData(data));
+    }, [])
     return (
         <section className=''>
             {/* Hero Header */}
@@ -31,18 +40,7 @@ const News = () => {
             <div className="grid lg:grid-cols-[70%_30%] gap-6 px-10">
                 {/* Left News Cards */}
                 <div className="grid md:grid-cols-2 gap-6">
-                    {[
-                        {
-                            img: "/img/blog1.png",
-                            title: "Robotics Workshop Highlights",
-                            desc: "A detailed recap of our recent robotics workshop featuring hands-on experience with cutting-edge technology and expert insights..."
-                        },
-                        {
-                            img: "/img/blog2.png",
-                            title: "Latest Advancements in Artificial Intelligence",
-                            desc: "Exploring the cutting-edge developments in AI and their potential impact on various industries. A comprehensive look at machine learning algorithms..."
-                        }
-                    ].map((news, i) => (
+                    {datas.map((news, i) => (
                         <div key={i} className="shadow-md rounded-lg pb-4 overflow-hidden">
                             <img src={news.img} alt={news.title} className="h-40 w-full object-cover" />
                             <div className="flex gap-6 p-3 text-sm text-gray-500">
@@ -51,7 +49,7 @@ const News = () => {
                             </div>
                             <h3 className="text-xl font-semibold px-4">{news.title}</h3>
                             <p className="px-4 py-2 text-gray-700">{news.desc}</p>
-                            <a href="#" className="text-[#045C99] px-4 hover:underline">Read More</a>
+                            <Link to={`/news/${news.id}`} className="text-[#045C99] px-4 hover:underline">Read More</Link>
                         </div>
                     ))}
                 </div>
