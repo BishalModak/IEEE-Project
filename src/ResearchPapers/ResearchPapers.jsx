@@ -1,9 +1,25 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 
 
 import userImage from '../../public/img/user.png';
 
 const ResearchPapers = () => {
+
+
+  const [datas, setData] = useState([]);
+
+
+  useEffect(() => {
+    fetch('/Papers.json')
+      .then(res => res.json())
+      .then(data => {
+        setData(data);
+        console.log(data);
+      });
+
+  }, [])
+
+
   return (
     <div className="font-sans bg-gray-50 w-[95%] mx-auto" >
       {/* Navbar */}
@@ -39,43 +55,30 @@ const ResearchPapers = () => {
                 </select>
               </div>
             </div>
-            {/* Research Papers List */}
-            <div className="space-y-6">
-              <div className="border-b pb-6">
-                <div className="flex justify-between items-center">
-                  <h2 className="text-2xl font-semibold">Deep Learning Approaches in Medical Image Analysis</h2>
-                  <button className="bg-[#045C99] text-white px-4 py-2 rounded-md">Download</button>
+            {/* Research Papers List */}            <div className="space-y-6">
+              {datas?.map((paper, i) => (
+                <div key={i} className="border-b pb-6">
+                  <div className="flex justify-between items-center ">
+                    <h2 className="text-2xl font-semibold">{paper?.title}</h2>
+                    <a href={`/paper/${paper.id}`} className="bg-[#045C99] text-white px-4 py-2 rounded-md hover:bg-blue-300 ">Read More</a>
+                  </div>
+                  <div className="flex space-x-4 mt-2">
+                    <p><i className="fa-solid fa-calendar-days"></i> {paper?.date}</p>
+                    <p><i className="fa-solid fa-user"></i> {paper?.author}</p>
+                  </div>
+                  <p className="mt-2">{paper?.abstract}</p>
+                  <div className="flex space-x-4 mt-4">
+                    {paper?.tags.map((tag, index) => (
+                      <span key={index} className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-sm">{tag}</span>
+                    ))}
+
+                  </div>
                 </div>
-                <div className="flex space-x-4 mt-2">
-                  <p><i className="fa-solid fa-calendar-days"></i> Date</p>
-                  <p><i className="fa-solid fa-user"></i> Full Name</p>
-                </div>
-                <p className="mt-2">A detailed overview of deep learning methods applied in medical image analysis. Focused on improving diagnostic accuracy and healthcare applications.</p>
-                <div className="flex space-x-4 mt-4">
-                  <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full">Deep Learning</span>
-                  <span className="bg-green-100 text-green-600 px-3 py-1 rounded-full">Healthcare</span>
-                </div>
-              </div>
-              <div className="border-b pb-6">
-                <div className="flex justify-between items-center">
-                  <h2 className="text-2xl font-semibold">5G Network Optimization Using Machine Learning</h2>
-                  <button className="bg-[#045C99] text-white px-4 py-2 rounded-md">Download</button>
-                </div>
-                <div className="flex space-x-4 mt-2">
-                  <p><i className="fa-solid fa-calendar-days"></i> Date</p>
-                  <p><i className="fa-solid fa-user"></i> Full Name</p>
-                </div>
-                <p className="mt-2">An exploration of the integration of machine learning algorithms in optimizing 5G network performance.</p>
-                <div className="flex space-x-4 mt-4">
-                  <span className="bg-blue-100 text-blue-600 px-3 py-1 rounded-full">5G</span>
-                  <span className="bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full">Machine Learning</span>
-                  <span className="bg-red-100 text-red-600 px-3 py-1 rounded-full">Networking</span>
-                </div>
-              </div>
+              ))}
+
             </div>
           </div>
 
-          {/* Right Section */}
           <div className="lg:w-1/3 mt-12 lg:mt-0">
             <div className="bg-white shadow-md rounded-lg p-6 mb-8">
               <h3 className="text-xl font-semibold mb-4">Statistics</h3>
@@ -133,7 +136,7 @@ const ResearchPapers = () => {
       </section>
 
 
-    </div>
+    </div >
   );
 };
 

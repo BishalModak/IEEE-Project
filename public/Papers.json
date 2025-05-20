@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Deep Learning Approaches in Medical Image Analysis",
+    "author": "Dr. Afsana Rahman",
+    "mail": "afsana.rahman@leadinguniversity.edu.bd",
+    "institution": "Leading University, Department of CSE",
+    "address": "Ragib Nagar, South Surma, Sylhet-3112, Bangladesh",
+    "category": "Artificial Intelligence",
+    "date": "2024-03-18",
+    "abstract": "This research provides a comprehensive review of deep learning models and their application in medical image analysis, emphasizing improved diagnostics.",
+    "methodology": "The study uses a comparative analysis of CNN and GAN architectures across several open-source medical datasets.",
+    "status": "Published",
+    "fundingInfo": "Funded by IEEE Bangladesh Section and Leading University Research Cell.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Deep_Learning_Diagram.png/800px-Deep_Learning_Diagram.png",
+    "tags": ["Deep Learning", "Healthcare"]
+  },
+  {
+    "id": 2,
+    "title": "5G Network Optimization Using Machine Learning",
+    "author": "Md. Rizwan Karim",
+    "mail": "rizwan.karim@leadinguniversity.edu.bd",
+    "institution": "Leading University, Department of ECE",
+    "address": "Ragib Nagar, South Surma, Sylhet-3112, Bangladesh",
+    "category": "Networking",
+    "date": "2024-07-05",
+    "abstract": "This paper explores how machine learning algorithms can optimize performance and reduce latency in 5G networks.",
+    "methodology": "A simulation-based approach using NS-3 and TensorFlow to test adaptive routing and bandwidth allocation strategies.",
+    "status": "Under Review",
+    "fundingInfo": "Partially funded by Huawei R&D Lab, Dhaka.",
+    "image": "https://cdn.analyticsvidhya.com/wp-content/uploads/2020/08/5G-featured-image.jpg",
+    "tags": ["5G", "Machine Learning", "Networking"]
+  }
+]

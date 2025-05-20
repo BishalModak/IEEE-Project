@@ -53,6 +53,7 @@ import AdvisorPanel from "./Members/AdvisorPanel.jsx";
 import Excom from "./Members/Excom.jsx";
 import Committee from "./Members/committee.jsx";
 import SingleMegazine from "./Megazine/SingleMegazine.jsx";
+import SingleResearchPaper from "./ResearchPapers/SingleResearchPaper.jsx";
 
 
 const router = createBrowserRouter([
@@ -240,6 +241,11 @@ const router = createBrowserRouter([
         path: '/megazine/:id',
         loader: () => fetch('/Megazine.json'),
         element: <SingleMegazine></SingleMegazine>
+      },
+      {
+        path: '/paper/:id',
+        loader: () => fetch('/Papers.json'),
+        element: <SingleResearchPaper></SingleResearchPaper>
       },
 
     ]
