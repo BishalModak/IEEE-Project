@@ -48,6 +48,10 @@ import IEEELU from "./IEEE/IEEELU.jsx";
 import IEEEBangladesh from "./IEEE/IEEEBangladesh.jsx";
 import SingleNews from "./News/SingleNews.jsx";
 import UserPage from "./UserPage/UserPage.jsx";
+import MembersPage from "./Members/MembersPage.jsx";
+import AdvisorPanel from "./Members/AdvisorPanel.jsx";
+import Excom from "./Members/Excom.jsx";
+import Committee from "./Members/committee.jsx";
 
 
 const router = createBrowserRouter([
@@ -207,6 +211,30 @@ const router = createBrowserRouter([
         loader: () => fetch('/News.json'),
         element: <SingleNews></SingleNews>
       },
+      {
+        path: '/membersPage',
+        element: <MembersPage></MembersPage>
+      },
+      {
+        path: '/members/advisorPanel',
+        element: <AdvisorPanel></AdvisorPanel>
+      },
+      {
+        path: '/members/excom',
+        element: <Excom></Excom>
+      },
+      {
+        path: '/members/committee',
+        element: <Committee></Committee>
+      },
+      {
+        path: '/members/developers',
+        element: <Developers></Developers>
+      },
+      {
+        path: '/members/volunteers',
+        element: <Volunteers></Volunteers>
+      }
 
     ]
 

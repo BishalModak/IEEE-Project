@@ -158,72 +158,16 @@ const Navbar = () => {
                     {/* ---------------------------------------------- */}
 
 
-                    <li className="relative group">
-                        <button onMouseEnter={() => setIsMembersOpen(!isMembersOpen)} onMouseLeave={() => setIsMembersOpen(!isMembersOpen)} className="md:text-xl text-2xl lg:text-[18px]">
-                            <div className='flex items-center gap-2'>
-                                <span
-                                    className={`hover:text-blue-300 ${isPanelActive || isvolunteersActive || isPNCActive || isdevelopersActive || isPCActive || isPublicityCoordinatorActive || isCREActive || isPEActive || isLEActive || isACMActive || isMDCActive || isWEBActive || isGDEActive || isVCEActive
-                                        ? "text-blue-300 border-b-2 border-blue-300"
-                                        : "text-white"
-                                        }`}
-                                >
-                                    Members
-                                </span>
-                                <FaChevronDown
-                                    className={`transition-transform text-sm duration-300 ${isMembersOpen ? "rotate-180" : "rotate-0"
-                                        }`}
-                                />
-                            </div>
-                        </button>
-                        {/* Dropdown on hover */}
-                        <div className="absolute top-full left-0 mt-8 w-64  bg-black text-white rounded shadow-lg z-20 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300">
-                            <ul>
-                                <li>
-                                    <Link to={"/panel"} className="block px-4 py-2 hover:bg-[#045C99]">Panels</Link>
-                                </li>
-                                <li>
-                                    <Link to={"/volunteers"} className="block px-4 py-2 hover:bg-[#045C99]">Volunteers</Link>
-                                </li>
-
-                                {/* Team submenu */}
-                                <li className="relative group/team">
-                                    <div className="flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-[#045C99]">
-                                        <span>Team</span>
-                                        <FaCaretRight className="ml-2" />
-                                    </div>
-                                    {/* Submenu on hover */}
-                                    <div className="absolute top-0 left-full ml-2 w-64 max-h-64 overflow-y-auto bg-black rounded shadow-lg z-30 opacity-0 group-hover/team:opacity-100 invisible group-hover/team:visible transition-all duration-300">
-                                        <ul>
-                                            {[
-                                                { name: "Program Coordinator", path: "/programCoordinator" },
-                                                { name: "Publication & Newsletter Coordinator", path: "/publication-newsletter-coordinator" },
-                                                { name: "Publicity Coordinator", path: "/publicity-coordinator" },
-                                                { name: "Chief Reporting Executive", path: "/chief-reporting-executive" },
-                                                { name: "Photography Executive", path: "/photography-executive" },
-                                                { name: "Logistic Executive", path: "/logistic-executive" },
-                                                { name: "ACM Coordinator", path: "/acm-coordinator" },
-                                                { name: "Membership Development Coordinator", path: "/membership-development-coordinator" },
-                                                { name: "Webmaster", path: "/webmaster" },
-                                                { name: "Graphics Design Executive", path: "/graphics-design-executive" },
-                                                { name: "Video Content Executive", path: "/video-content-executive" },
-                                            ].map((role) => (
-                                                <li key={role.name}>
-                                                    <Link to={role.path} className="block px-4 py-2 hover:bg-[#045C99]">
-                                                        {role.name}
-                                                    </Link>
-                                                </li>
-
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <Link to={"/developers"} className="block px-4 py-2 hover:bg-[#045C99]">Developers</Link>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                    <Link to={"/membersPage"} className='md:text-xl text-2xl lg:text-[18px]'>
+                        <span
+                            className={`hover:text-black ${isPanelActive || isvolunteersActive || isPNCActive || isdevelopersActive || isPCActive || isPublicityCoordinatorActive || isCREActive || isPEActive || isLEActive || isACMActive || isMDCActive || isWEBActive || isGDEActive || isVCEActive
+                                ? "text-blue-300 border-b-2 border-blue-300"
+                                : "text-white"
+                                }`}
+                        >
+                            Members
+                        </span>
+                    </Link>
 
 
 
@@ -345,7 +289,7 @@ const Navbar = () => {
                         </div>
                     </li>
 
-                    <li><Link to={"/contact"} className='md:text-xl text-2xl lg:text-[18px]' ><span className={`hover:text-blue-300 ${iscontactActive ? "text-black border-b-2  border-black " : "text-white "} `}>Contact</span></Link></li>
+                    <li><Link to={"/contact"} className='md:text-xl text-2xl lg:text-[18px]' ><span className={`hover:text-blue-300 ${iscontactActive ? "text-blue-300 border-b-2 border-blue-300 " : "text-white "} `}>Contact</span></Link></li>
 
                     <li className="relative group">
                         <button onMouseEnter={() => setIsGetInvolvedOpen(!isGetInvolvedOpen)} onMouseLeave={() => setIsGetInvolvedOpen(!isGetInvolvedOpen)} className="md:text-xl text-2xl lg:text-[18px]">

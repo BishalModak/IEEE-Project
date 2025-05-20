@@ -2,7 +2,7 @@ import React from 'react';
 import About from './About/About';
 import ResourcesAndRecordings from './Resources/ResourcesAndRecordings';
 import Countdown from './Countdown/Countdown';
-import Committee from './Committee/Committee';
+import Committee from './Committee/CurrentCommittee';
 import RecentNews from './RecentNews/RecentNews';
 import Banner from './Banner/Banner';
 
