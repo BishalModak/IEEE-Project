@@ -96,9 +96,9 @@ const SignUp = () => {
 
 
               <div className="text-left">
-                <label htmlFor="IEEEID" className="block mb-2 text-gray-700">Password</label>
+                <label htmlFor="IEEEID" className="block mb-2 text-gray-700">IEEE ID</label>
                 <input
-                  type="number"
+                  type="text"
                   id="IEEEID"
                   name="IEEEID"
                   placeholder="IEEE ID"

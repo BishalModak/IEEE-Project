@@ -31,9 +31,9 @@ const RecentNews = () => {
         <section className="w-[80%] mx-auto my-24 font-sans text-gray-800">
         <div className="flex justify-between items-center mb-5">
           <h3 className="text-3xl font-bold text-gray-900">Recent News</h3>
-          <Link to="/news" className="text-[#045C99] font-bold hover:text-gray-600 transition-colors duration-300">
+          <a href='/news' className="text-[#045C99] font-bold hover:text-gray-600 transition-colors duration-300">
             Read All News
-          </Link>
+          </a>
         </div>
   
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">

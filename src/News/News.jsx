@@ -13,9 +13,9 @@ const News = () => {
             .then(data => setData(data));
     }, [])
     return (
-        <section className=''>
+        <section className='mb-10'>
             {/* Hero Header */}
-            <div className="relative w-full h-[60vh] overflow-hidden">
+            <div className="relative w-full h-[60vh] overflow-hidden mb-3">
                 <img src="/img/news.jpg" alt="News Banner" className="w-full h-full object-cover" />
                 <div className="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white p-8 w-full">
                     <h2 className="text-3xl md:text-4xl font-semibold">

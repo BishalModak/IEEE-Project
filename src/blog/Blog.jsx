@@ -13,13 +13,13 @@ const Blog = () => {
     return (
         <>
             {/* Blog Title */}
-            <section className="text-center py-8">
+            <section className="text-center py-8 mb-10">
                 <h1 className="text-4xl text-[#045C99]  font-bold">IEEE LU SB Blogs</h1>
                 <p className="text-gray-600 mt-2 mx-2">Stay updated with the latest news, events and technical articles from our student branch</p>
             </section>
 
             {/* Main Blog Section */}
-            <section className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-6 w-[90%] mx-auto">
+            <section className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-6 w-[90%] mx-auto mb-12">
                 {/* Left: Blog List + Filters */}
                 <div>
                     {/* Filter Options */}

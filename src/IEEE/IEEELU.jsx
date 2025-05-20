@@ -1,14 +1,18 @@
 import React from 'react';
-import aboutImg from  '../../public/img/LUBRANCH.jpg'
+import aboutImg from '../../public/img/LUBRANCH.jpg'
+import Calender from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 import {
     FileText,
     Code2,
     Film,
     Pencil,
     Users,
+    
     DollarSign,
+    
     Megaphone,
-    Calendar,
+    
     Truck
 } from 'lucide-react';
 import { ArrowRight } from "lucide-react";
@@ -22,13 +26,13 @@ const IEEELU = () => {
         { icon: <Users size={40} />, title: 'Membership Development' },
         { icon: <DollarSign size={40} />, title: 'Finance and Corporate' },
         { icon: <Megaphone size={40} />, title: 'Public Relations and Promotions' },
-        { icon: <Calendar size={40} />, title: 'Events and Management' },
+
         { icon: <Truck size={40} />, title: 'Logistics and Operations' },
     ];
 
     return (
         <div className='w-full mx-auto'>
-            
+
             <header
                 className="relative w-full h-[450px] bg-cover bg-center flex items-center justify-center text-white"
                 style={{ backgroundImage: `url(${aboutImg})` }}
@@ -41,9 +45,9 @@ const IEEELU = () => {
                 {/* Text Content */}
                 <div className="relative z-2 text-center px-4">
                     <h2 className="text-2xl md:text-5xl text-white shadow-2xl font-bold">
-                    IEEE LU Student Branch
+                        IEEE LU Student Branch
                     </h2>
-                   
+
                 </div>
             </header>
             <div className=" w-[85%] mx-auto  pt-20 pb-10 px-6 md:px-20">
@@ -161,7 +165,7 @@ const IEEELU = () => {
                     <div className="md:w-1/3">
                         <h3 className="text-xl font-bold mb-2">EVENT CALENDER</h3>
                         <div className="w-20 h-1 bg-[#045C99]mb-4"></div>
-                        <div class="">
+                        {/* <div class="">
                             <div class="max-w-md mx-auto bg-white rounded-lg shadow-md overflow-hidden">
                                 <div class="bg-[#045C99] text-white text-center py-4 text-xl font-semibold">
                                     April 2025
@@ -216,7 +220,17 @@ const IEEELU = () => {
 
                                 </div>
                             </div>
+                        </div> */}
+                        {/* Calendar Section */}
+
+                        <div className="bg-white p-4 shadow-lg rounded-md">
+                            <Calender
+                                onChange={() => { }}
+                                value={new Date()}
+                                className="w-full"
+                            />
                         </div>
+
 
                     </div>
 

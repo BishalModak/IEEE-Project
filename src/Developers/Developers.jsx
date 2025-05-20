@@ -115,7 +115,7 @@ const Developers = () => {
       {/* current web master Cards */}
       <div className="text-center mt-6   mb-6">
 
-        <p className="text-4xl font-extrabold text-[#045C99] mt-6   underline">Web Masters</p>
+        <p className="text-4xl font-extrabold text-[#045C99] mt-6   ">Web Masters</p>
 
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -142,7 +142,7 @@ const Developers = () => {
       {/* Guest developers Cards */}
       <div className="text-center mt-6   ">
 
-        <p className="text-4xl font-extrabold text-[#045C99] mt-14   underline">Guest Developer</p>
+        <p className="text-4xl font-extrabold text-[#045C99] mt-14   ">Guest Developer</p>
 
       </div>
       <div className="flex flex-row items-center justify-center mb-12 mt-5" >
@@ -171,7 +171,7 @@ const Developers = () => {
 
 
         {/* Guest graphic designer */}
-        <p className="text-4xl font-extrabold text-[#045C99] mt-14   underline">Guest UI/UX Designer</p>
+        <p className="text-4xl font-extrabold text-[#045C99] mt-14   ">Guest UI/UX Designer</p>
 
       </div>
       <div className="flex flex-row items-center justify-center mb-12 mt-5" >
@@ -217,7 +217,7 @@ const Developers = () => {
       </div>
 
       {/* Technologies Used */}
-      <div className="text-center mt-12  0">
+      <div className="text-center mt-12 mb-10  0">
         <h2 className="text-4xl font-bold text-black">Technologies Used</h2>
         <p className="text-lg text-gray-600 mt-6  ">Built with modern and reliable technologies</p>
         <div className="flex flex-wrap justify-evenly gap-8 mt-6">

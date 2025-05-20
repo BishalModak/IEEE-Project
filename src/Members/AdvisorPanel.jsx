@@ -3,7 +3,7 @@ import React from 'react';
 const AdvisorPanel = () => {
     return (
         <div>
-            <section className="text-center">
+            <section className="text-center mb-10">
                 <h1 className="text-3xl mt-4 font-bold text-[#045C99]">Current Advisory Panel</h1>
                 <p className="text-gray-600">Distinguished Advisors Supporting Our Mission</p>
                 <div className="flex flex-row justify-center gap-25  mt-6">

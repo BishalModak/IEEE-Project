@@ -7,7 +7,7 @@ const SignIn = () => {
     email: '',
     memberType: 'local',
     password: '',
-    confirmPassword: ''
+    
   });
   const handleChange = (e) => {
     const { name, value, type } = e.target;
@@ -27,7 +27,7 @@ const SignIn = () => {
     <section className="bg-gray-100 min-h-screen flex items-center justify-center p-6">
       <div className="max-w-lg w-full ">
           <div className="text-center mb-6">
-            <h1 className="text-3xl font-semibold mb-2">Welcome Back</h1>
+            <h1 className="text-3xl font-semibold mb-2">Welcome</h1>
             <p className="text-gray-600 mb-6">
               Join us and be part of a vibrant community. Sign up now to unlock exclusive content and features!
             </p>
@@ -106,25 +106,13 @@ const SignIn = () => {
                 />
               </div>
 
-              <div className="text-left">
-                <label htmlFor="confirmPassword" className="block mb-2 text-gray-700">Confirm Password</label>
-                <input
-                  type="password"
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  placeholder="Confirm Password"
-                  className="w-full border border-gray-300 rounded p-2"
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+              
 
               <button
                 type="submit"
                 className="w-full bg-[#045C99] hover:bg-blue-700 text-white py-2 px-4 rounded"
               >
-                Register
+                Log In
               </button>
 
               <p className="text-center text-sm text-gray-600 mt-4">
