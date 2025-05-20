@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { FaCalendarDays, FaUser } from "react-icons/fa6";
+
 
 const Megazine = () => {
+
+  const [datas, setData] = useState([]);
+
+  useEffect(() => {
+    fetch('/Megazine.json')
+      .then(res => res.json())
+      .then(data => setData(data));
+  }, [])
+
+
   return (
     <section className="py-10 bg-white">
       <div className="max-w-6xl mx-auto px-4">
@@ -31,43 +43,20 @@ const Megazine = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Magazine 1 */}
-          <div className="shadow-md rounded-lg overflow-hidden bg-white">
-            <img src="img/megazin1.png" alt="Tech Horizon Magazine" className="w-full rounded-tr-lg rounded-bl-lg mb-4" />
-            <span className="block px-5 text-sm text-gray-500">
-              <i className="fa-solid fa-calendar-days mr-1"></i> date
-            </span>
-            <h3 className="px-5 mt-2 font-semibold text-lg">Tech Horizon Magazine</h3>
-            <p className="px-5 mt-2 text-sm text-gray-600">
-              Exploring the latest advancements in technology and their impact on society.
-            </p>
-            <a href="#" className="block px-5 mt-4 text-[#045C99] hover:underline">Read More</a>
-          </div>
+          {datas.map((megazine, i) => (
+            <div key={i} className="shadow-md rounded-lg pb-4 overflow-hidden">
+              <img src={megazine?.image} alt={megazine.alt} className="h-40 w-full object-cover" />
+              <div className="flex gap-6 p-3 text-sm text-gray-500">
+                <p><FaCalendarDays className="inline mr-1" /> Date</p>
+                <p><FaUser className="inline mr-1" /> Full Name</p>
 
-          {/* Magazine 2 */}
-          <div className="shadow-md rounded-lg overflow-hidden bg-white">
-            <img src="img/megazin2.png" alt="Innovation Quarterly" className="w-full rounded-tr-lg rounded-bl-lg mb-4" />
-            <span className="block px-5 text-sm text-gray-500">
-              <i className="fa-solid fa-calendar-days mr-1"></i> date
-            </span>
-            <h3 className="px-5 mt-2 font-semibold text-lg">Innovation Quarterly</h3>
-            <p className="px-5 mt-2 text-sm text-gray-600">
-              Showcasing student research projects and technical innovations.
-            </p>
-            <a href="#" className="block px-5 mt-4 text-[#045C99] hover:underline">Read More</a>
-          </div>
+              </div>
+              <h3 className="text-xl font-semibold px-4">{megazine.title}</h3>
+              <p className="px-4 py-2 text-gray-700">{megazine.description}</p>
+              <a href={`/megazine/${megazine.id}`} className="text-[#045C99] px-4 hover:underline">Read More</a>
+            </div>
+          ))}
 
-          {/* Magazine 3 */}
-          <div className="shadow-md rounded-lg overflow-hidden bg-white">
-            <img src="img/megazin3.png" alt="LU Tech Review" className="w-full rounded-tr-lg rounded-bl-lg mb-4" />
-            <span className="block px-5 text-sm text-gray-500">
-              <i className="fa-solid fa-calendar-days mr-1"></i> date
-            </span>
-            <h3 className="px-5 mt-2 font-semibold text-lg">LU Tech Review</h3>
-            <p className="px-5 mt-2 text-sm text-gray-600">
-              Annual review of technological achievements and student success stories.
-            </p>
-            <a href="#" className="block px-5 mt-4 py-4 text-[#045C99] hover:underline">Read More</a>
-          </div>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ import { FaEnvelope, FaLocationDot, FaFacebook, FaLinkedin } from "react-icons/f
 const Contact = () => {
     return (
         <section className="bg-white px-6 py-10 text-center">
-            <h2 className="text-3xl font-bold text-blue-400 mb-2">Contact Us</h2>
+            <h2 className="text-3xl font-bold text-[#045C99] mb-2">Contact Us</h2>
             <p className="text-gray-600 text-lg">Get in touch with IEEE LU Student Branch. We'd love to hear from you!</p>
 
             <div className="flex flex-col lg:flex-row gap-10 mt-10 max-w-screen-xl mx-auto">
@@ -31,7 +31,7 @@ const Contact = () => {
                             <textarea id="message" rows="4" className="w-full p-2 border border-gray-300 rounded resize-none" />
                         </div>
 
-                        <button type="submit" className="w-full bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition">Send Message</button>
+                        <button type="submit" className="w-full bg-[#045C99] hover:bg-blue-300 text-white font-medium py-2 px-4 rounded transition">Send Message</button>
                     </form>
                 </div>
 
@@ -40,10 +40,10 @@ const Contact = () => {
                     <div className="bg-white p-6 rounded-xl shadow-md mb-6">
                         <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
                         <p className="text-sm text-gray-600 mb-3 flex items-center gap-2">
-                            <FaEnvelope className="text-orange-400" /> ieee.Lusb@Lu.edu
+                            <FaEnvelope className="text-[#045C99]" /> ieee.Lusb@Lu.edu
                         </p>
                         <p className="text-sm text-gray-600 mb-3 flex items-center gap-2">
-                            <FaLocationDot className="text-orange-400" /> KamalBazar, Sylhet
+                            <FaLocationDot className="text-[#045C99]" /> KamalBazar, Sylhet
                         </p>
 
                         <div className="flex items-center gap-4 mt-4">

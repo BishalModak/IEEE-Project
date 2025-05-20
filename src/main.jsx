@@ -52,6 +52,7 @@ import MembersPage from "./Members/MembersPage.jsx";
 import AdvisorPanel from "./Members/AdvisorPanel.jsx";
 import Excom from "./Members/Excom.jsx";
 import Committee from "./Members/committee.jsx";
+import SingleMegazine from "./Megazine/SingleMegazine.jsx";
 
 
 const router = createBrowserRouter([
@@ -234,7 +235,12 @@ const router = createBrowserRouter([
       {
         path: '/members/volunteers',
         element: <Volunteers></Volunteers>
-      }
+      },
+      {
+        path: '/megazine/:id',
+        loader: () => fetch('/Megazine.json'),
+        element: <SingleMegazine></SingleMegazine>
+      },
 
     ]
 

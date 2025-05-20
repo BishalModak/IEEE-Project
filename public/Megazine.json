@@ -1,0 +1,26 @@
+[
+  { "id": 1,
+    "title": "Tech Horizon Magazine",
+    "image": "../public/img/megazin1.png",
+    "alt": "Tech Horizon Magazine",
+    "date": "date",
+    "description": "Exploring the latest advancements in technology and their impact on society.",
+    "link": "#"
+  },
+  { "id": 2,
+    "title": "Innovation Quarterly",
+    "image": "../public/img/megazin2.png",  
+    "alt": "Innovation Quarterly",
+    "date": "date",
+    "description": "Showcasing student research projects and technical innovations.",
+    "link": "#"
+  },
+  { "id": 3,
+    "title": "LU Tech Review",
+    "image": "../public/img/megazin3.png",
+    "alt": "LU Tech Review",
+    "date": "date",
+    "description": "Annual review of technological achievements and student success stories.",
+    "link": "#"
+  }
+]

@@ -51,6 +51,7 @@ const Navbar = () => {
     const isWEBActive = location.pathname.startsWith("/webmaster");
     const isGDEActive = location.pathname.startsWith("/graphics-design-executive");
     const isVCEActive = location.pathname.startsWith("/video-content-executive");
+    const isMembersActive = location.pathname.startsWith("/membersPage");
 
 
 
@@ -160,7 +161,7 @@ const Navbar = () => {
 
                     <Link to={"/membersPage"} className='md:text-xl text-2xl lg:text-[18px]'>
                         <span
-                            className={`hover:text-black ${isPanelActive || isvolunteersActive || isPNCActive || isdevelopersActive || isPCActive || isPublicityCoordinatorActive || isCREActive || isPEActive || isLEActive || isACMActive || isMDCActive || isWEBActive || isGDEActive || isVCEActive
+                            className={`hover:text-blue-300 ${isMembersActive
                                 ? "text-blue-300 border-b-2 border-blue-300"
                                 : "text-white"
                                 }`}
@@ -391,40 +392,16 @@ const Navbar = () => {
                         </li>
 
                         <li>
-                            <button onClick={() => setMobileSubMenu(mobileSubMenu === 'members' ? null : 'members')} className="w-full text-left">Members</button>
-                            {mobileSubMenu === 'members' && (
-                                <ul className="pl-4 mt-2 space-y-1 text-sm">
-                                    <li><Link to={"/panel"}>Panels</Link></li>
-                                    <li><Link to={"/volunteers"}>Volunteers</Link></li>
-                                    <li>
-                                        <button onClick={() => setMobileTeamOpen(!mobileTeamOpen)} className="w-full text-left">Team</button>
-                                        {mobileTeamOpen && (
-                                            <div className="max-h-48 overflow-y-auto pl-4 mt-2 space-y-1 text-xs">
-                                                {[
-                                                    { name: "Program Coordinator", path: "/programCoordinator" },
-                                                    { name: "Publication & Newsletter Coordinator", path: "/publication-newsletter-coordinator" },
-                                                    { name: "Publicity Coordinator", path: "/publicity-coordinator" },
-                                                    { name: "Chief Reporting Executive", path: "/chief-reporting-executive" },
-                                                    { name: "Photography Executive", path: "/photography-executive" },
-                                                    { name: "Logistic Executive", path: "/logistic-executive" },
-                                                    { name: "ACM Coordinator", path: "/acm-coordinator" },
-                                                    { name: "Membership Development Coordinator", path: "/membership-development-coordinator" },
-                                                    { name: "Webmaster", path: "/webmaster" },
-                                                    { name: "Graphics Design Executive", path: "/graphics-design-executive" },
-                                                    { name: "Video Content Executive", path: "/video-content-executive" },
-                                                ].map((role) => (
-                                                    <li key={role.name}>
-                                                        <Link to={role.path} className="block px-4 py-2 hover:bg-[#045C99]">
-                                                            {role.name}
-                                                        </Link>
-                                                    </li>
-
-                                                ))}
-                                            </div>
-                                        )}
-                                    </li>
-                                </ul>
-                            )}
+                            <a href={"/membersPage"} className='md:text-xl text-2xl lg:text-[18px]'>
+                                <span
+                                    className={`hover:text-blue-300 ${isMembersActive
+                                        ? "text-blue-300 border-b-2 border-blue-300"
+                                        : "text-white"
+                                        }`}
+                                >
+                                    Members
+                                </span>
+                            </a>
                         </li>
 
                         <li>
