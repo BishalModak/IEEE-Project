@@ -6,7 +6,7 @@ const Blog = () => {
     const [datas, setData] = useState([]);
 
     useEffect(() => {
-        fetch('/News.json')
+        fetch('/Blog.json')
             .then(res => res.json())
             .then(data => setData(data));
     }, [])
@@ -61,7 +61,7 @@ const Blog = () => {
                                     </div>
                                     <h3 className="text-xl font-semibold px-4">{news.title}</h3>
                                     <p className="px-4 py-2 text-gray-700">{news.desc}</p>
-                                    <a href={`/news/${news.id}`} className="text-[#045C99] px-4 hover:underline">Read More</a>
+                                    <a href={`/blogs/${news.id}`} className="text-[#045C99] px-4 hover:underline">Read More</a>
                                 </div>
                             ))}
                         

@@ -54,6 +54,9 @@ import Excom from "./Members/Excom.jsx";
 import Committee from "./Members/committee.jsx";
 import SingleMegazine from "./Megazine/SingleMegazine.jsx";
 import SingleResearchPaper from "./ResearchPapers/SingleResearchPaper.jsx";
+import AddNews from "./News/AddNews.jsx";
+import AddMegazine from "./Megazine/AddMegazine.jsx";
+import SingleBlog from "./blog/SingleBlog.jsx";
 
 
 const router = createBrowserRouter([
@@ -214,6 +217,11 @@ const router = createBrowserRouter([
         element: <SingleNews></SingleNews>
       },
       {
+        path: '/blogs/:id',
+        loader: () => fetch('/Blog.json'),
+        element: <SingleBlog></SingleBlog>
+      },
+      {
         path: '/membersPage',
         element: <MembersPage></MembersPage>
       },
@@ -247,6 +255,14 @@ const router = createBrowserRouter([
         loader: () => fetch('/Papers.json'),
         element: <SingleResearchPaper></SingleResearchPaper>
       },
+      {
+        path: '/addNews',
+        element: <AddNews></AddNews>
+      },
+      {
+        path: '/addMegazine',
+        element: <AddMegazine></AddMegazine>
+      }
 
     ]
 

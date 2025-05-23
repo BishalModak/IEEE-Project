@@ -12,7 +12,7 @@ const Banner = () => {
     const overlayText = (
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white bg-black/40 px-4">
             <h2 className="text-5xl md:text-6xl font-bold font-['Roboto'] mb-4">
-                <span className="text-[#045C99]"> IEEE</span> LU SB Chapter
+                <span className="text-blue-300"> IEEE</span> LU SB Chapter
             </h2>
             <p className="text-base w-[80%] md:text-lg font-['Roboto'] leading-relaxed mb-6">
                 The Outstanding Student Branch with its set of skills and enthusiastic members thrives <br />

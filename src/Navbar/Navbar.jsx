@@ -392,7 +392,7 @@ const Navbar = () => {
                         </li>
 
                         <li>
-                            <a href={"/membersPage"} className='md:text-xl text-2xl lg:text-[18px]'>
+                            <a href={"/membersPage"} className='w-full text-left'>
                                 <span
                                     className={`hover:text-blue-300 ${isMembersActive
                                         ? "text-blue-300 border-b-2 border-blue-300"
