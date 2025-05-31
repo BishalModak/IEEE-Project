@@ -28,12 +28,12 @@ const MembersPage = () => {
             route: '/members/developers',
             description: 'The technical team behind IEEE LU Student Branch web presence',
         },
-        // {
-        //     id: 5,
-        //     name: 'Volunteers',
-        //     route: '/members/volunteers',
-        //     description: 'Dedicated volunteers supporting IEEE LU Student Branch activities',
-        // }
+        {
+            id: 5,
+            name: 'Volunteers',
+            route: '/members/volunteers',
+            description: 'Dedicated volunteers supporting IEEE LU Student Branch activities',
+        }
     ];
 
     return (
@@ -44,7 +44,7 @@ const MembersPage = () => {
                     Meet the dedicated team of professionals and students who make the IEEE Leading University Student Branch possible.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mt-8">
                     {categories.map((category) => (
                         <a
                             key={category.id}
