@@ -57,6 +57,15 @@ import SingleResearchPaper from "./ResearchPapers/SingleResearchPaper.jsx";
 import AddNews from "./News/AddNews.jsx";
 import AddMegazine from "./Megazine/AddMegazine.jsx";
 import SingleBlog from "./blog/SingleBlog.jsx";
+import AddEvent from "./Event/AddEvent.jsx";
+import Dashboard from "./Dashboard/Dashboard.jsx";
+import AddGallery from "./Gallery/AddGallery.jsx";
+import UpdateNews from "./News/UpdateNews.jsx";
+import UpdateMegazine from "./Megazine/UpdateMegazine.jsx";
+import UpdateEvent from "./Event/UpdateEvent.jsx";
+import UpdateGallery from "./Gallery/UpdateGallery.jsx";
+import UpdateResearch from "./AddResearch/UpdateResearch.jsx";
+import UpdateBlog from "./BlogWriting/UpdateBlog.jsx";
 
 
 const router = createBrowserRouter([
@@ -73,6 +82,7 @@ const router = createBrowserRouter([
         path: '/addResearch',
         element: <AddResearch></AddResearch>
       },
+      
       {
         path: '/blog',
         element: <Blog></Blog>
@@ -262,7 +272,35 @@ const router = createBrowserRouter([
       {
         path: '/addMegazine',
         element: <AddMegazine></AddMegazine>
-      }
+      },
+      {
+        path: '/addEvent',
+        element: <AddEvent></AddEvent>
+      },
+      {
+        path: '/addGallery',
+        element: <AddGallery></AddGallery>
+      },
+      {
+        path: '/updateNews',
+        element: <UpdateNews></UpdateNews>
+      },
+      {
+        path: '/updateMegazine',
+        element: <UpdateMegazine></UpdateMegazine>
+      },
+      {
+        path: '/updateEvent',
+        element: <UpdateEvent></UpdateEvent>
+      },
+      {
+        path: '/updateGallery',
+        element: <UpdateGallery></UpdateGallery>
+      },
+      {
+        path: '/updateResearch',
+        element: <UpdateResearch></UpdateResearch>
+      },
 
     ]
 
@@ -283,6 +321,14 @@ const router = createBrowserRouter([
   {
     path: '/user',
     element: <UserPage></UserPage>
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard></Dashboard>
+  },
+  {
+    path: 'updateBlog',
+    element: <UpdateBlog></UpdateBlog>
   },
 
 
