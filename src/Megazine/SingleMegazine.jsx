@@ -187,7 +187,7 @@ const SingleMegazine = () => {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {[1, 2, 3, 4].map((item) => (
+                        {[1].map((item) => (
                             <div key={item} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
                                 <div className="h-40 bg-gray-200">
                                     <img

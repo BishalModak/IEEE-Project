@@ -24,8 +24,8 @@ const MembersPage = () => {
         },
         {
             id: 4,
-            name: 'Developers',
-            route: '/members/developers',
+            name: 'Ex ExCom',
+            route: '/members/exexcom',
             description: 'The technical team behind IEEE LU Student Branch web presence',
         },
         {

@@ -1,10 +1,124 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaNewspaper, FaBook, FaCalendarAlt, FaBlog, FaImages, FaUsers, FaSignOutAlt, FaBars, FaTimes, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaHome, FaNewspaper, FaBook, FaCalendarAlt, FaBlog, FaImages, FaUsers, FaSignOutAlt, FaBars, FaTimes, FaMapMarkerAlt, FaEnvelope, FaIdCard, FaAddressBook, FaComment, FaUserTie, FaFacebook, FaLinkedin } from 'react-icons/fa';
 
 const Dashboard = () => {
     const [isSidebarOpen, setSidebarOpen] = useState(true);
     const [activeSection, setActiveSection] = useState('home');
+
+    // Mock users data
+    const users = [
+        {
+            id: 1,
+            name: "Dr. Ahmed Khan",
+            email: "ahmed.khan@ieee.org",
+            ieeeId: "95782364",
+            image: "/img/Lukman Hossain.jpg",
+            role: "Senior Member",
+            department: "Electrical Engineering",
+            joinDate: "June 15, 2022"
+        },
+        {
+            id: 2,
+            name: "Sarah Thompson",
+            email: "sarah.t@ieee.org",
+            ieeeId: "86451279",
+            image: "/img/sourav.jpg",
+            role: "Member",
+            department: "Computer Science",
+            joinDate: "August 3, 2023"
+        },
+        {
+            id: 3,
+            name: "Rahul Mehta",
+            email: "r.mehta@ieee.org",
+            ieeeId: "78945612",
+            image: "/img/pulok.jpg",
+            role: "Student Member",
+            department: "Electronics",
+            joinDate: "January 22, 2024"
+        },
+        {
+            id: 4,
+            name: "Jessica Chen",
+            email: "j.chen@ieee.org",
+            ieeeId: "36974125",
+            image: "/img/Tahsin.jpg",
+            role: "Graduate Student",
+            department: "Telecommunications",
+            joinDate: "March 8, 2024"
+        },
+        {
+            id: 5,
+            name: "Michael Lee",
+            email: "m.lee@ieee.org",
+            ieeeId: "45612378",
+            image: "/img/tahmid.jpg",
+            role: "Associate Member",
+            department: "Robotics",
+            joinDate: "November 14, 2023"
+        },
+        {
+            id: 6,
+            name: "Badar Hossain",
+            email: "p.sharma@ieee.org",
+            ieeeId: "12789456",
+            image: "/img/Badar.jpg",
+            role: "Student Member",
+            department: "Mechanical Engineering",
+            joinDate: "February 19, 2024"
+        }
+    ];    // Mock contacts data
+    const contacts = [
+        {
+            id: 1,
+            name: "Dr. Ahmed Khan",
+            email: "ahmed.khan@ieee.org",
+            position: "Branch Chair",
+            image: "/img/Lukman Hossain.jpg",
+            department: "Electrical Engineering"
+        },
+        {
+            id: 2,
+            name: "Sarah Thompson",
+            email: "sarah.t@ieee.org",
+            position: "Vice Chair",
+            image: "/img/sourav.jpg",
+            department: "Computer Science"
+        },
+        {
+            id: 3,
+            name: "Rahul Mehta",
+            email: "r.mehta@ieee.org",
+            position: "Secretary",
+            image: "/img/pulok.jpg",
+            department: "Electronics"
+        },
+        {
+            id: 4,
+            name: "Jessica Chen",
+            email: "j.chen@ieee.org",
+            position: "Treasurer",
+            image: "/img/Tahsin.jpg",
+            department: "Telecommunications"
+        },
+        {
+            id: 5,
+            name: "Michael Lee",
+            email: "m.lee@ieee.org",
+            position: "Event Coordinator",
+            image: "/img/tahmid.jpg",
+            department: "Robotics"
+        },
+        {
+            id: 6,
+            name: "Badar Hossain",
+            email: "b.hossain@ieee.org",
+            position: "Membership Lead",
+            image: "/img/Badar.jpg",
+            department: "Mechanical Engineering"
+        }
+    ];
 
     // Mock stats for dashboard overview
     const stats = [
@@ -21,11 +135,10 @@ const Dashboard = () => {
     };
 
     return (
-        <div className="flex h-screen bg-gray-100">
-            {/* Sidebar */}
-            <div className={`${isSidebarOpen ? 'w-64' : 'w-20'} bg-[#045C99] text-white transition-all duration-300 ease-in-out`}>
+        <div className="flex h-screen bg-gray-100">            {/* Sidebar */}
+            <div className={`${isSidebarOpen ? 'w-64' : 'w-20'} bg-[#045C99] text-white transition-all duration-300 ease-in-out flex flex-col h-screen`}>
                 {/* Logo and Brand */}
-                <div className="flex items-center justify-center py-6 ">
+                <div className="flex items-center justify-center py-4 border-b border-blue-700/50">
                     <img
                         src="/img/ieee_logo.png"
                         alt="IEEE Logo"
@@ -33,9 +146,9 @@ const Dashboard = () => {
                     />
                 </div>
 
-                {/* Navigation Links */}
-                <nav className="mt-8 px-4">
-                    <ul className="space-y-2">
+                {/* Navigation Links - Made Scrollable */}
+                <nav className="flex-1 overflow-y-auto py-4 px-3">
+                    <ul className="space-y-1.5">
                         <li>
                             <button
                                 onClick={() => setActiveSection('home')}
@@ -89,8 +202,7 @@ const Dashboard = () => {
                                 <FaNewspaper className="text-xl" />
                                 {isSidebarOpen && <span className="ml-4">News</span>}
                             </button>
-                        </li>
-                        <li>
+                        </li>                        <li>
                             <button
                                 onClick={() => setActiveSection('gallery')}
                                 className={`flex items-center w-full p-3 rounded-lg hover:bg-blue-700 transition duration-200 ${activeSection === 'gallery' ? 'bg-blue-700' : ''}`}
@@ -98,17 +210,42 @@ const Dashboard = () => {
                                 <FaImages className="text-xl" />
                                 {isSidebarOpen && <span className="ml-4">Gallery</span>}
                             </button>
+                        </li>                        <li>
+                            <button
+                                onClick={() => setActiveSection('users')}
+                                className={`flex items-center w-full p-3 rounded-lg hover:bg-blue-700 transition duration-200 ${activeSection === 'users' ? 'bg-blue-700' : ''}`}
+                            >
+                                <FaUsers className="text-xl" />
+                                {isSidebarOpen && <span className="ml-4">Users</span>}
+                            </button>
+                        </li>                        <li>
+                            <button
+                                onClick={() => setActiveSection('contacts')}
+                                className={`flex items-center w-full p-3 rounded-lg hover:bg-blue-700 transition duration-200 ${activeSection === 'contacts' ? 'bg-blue-700' : ''}`}
+                            >
+                                <FaAddressBook className="text-xl" />
+                                {isSidebarOpen && <span className="ml-4">Contacts</span>}
+                            </button>
                         </li>
-
+                        <li>
+                            <button
+                                onClick={() => setActiveSection('committee')}
+                                className={`flex items-center w-full p-3 rounded-lg hover:bg-blue-700 transition duration-200 ${activeSection === 'committee' ? 'bg-blue-700' : ''}`}
+                            >
+                                <FaUserTie className="text-xl" />
+                                {isSidebarOpen && <span className="ml-4">Committee</span>}
+                            </button>
+                        </li>
                     </ul>
-
-                    <div className="absolute bottom-0 left-0   p-4">
-                        <button className="flex items-center w-full p-3 rounded-lg hover:bg-red-700 transition duration-200">
-                            <FaSignOutAlt className="text-xl" />
-                            {isSidebarOpen && <span className="ml-3">Logout</span>}
-                        </button>
-                    </div>
                 </nav>
+
+                {/* Fixed Logout Button */}
+                <div className="py-2 px-3 border-t border-blue-700/50">
+                    <button className="flex items-center w-full p-3 rounded-lg hover:bg-red-700 transition duration-200">
+                        <FaSignOutAlt className="text-xl" />
+                        {isSidebarOpen && <span className="ml-3">Logout</span>}
+                    </button>
+                </div>
             </div>
 
             {/* Main Content */}
@@ -256,7 +393,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
 
-                            
+
                         </div>
                     )}
 
@@ -339,7 +476,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
 
-                          
+
                         </div>
                     )}
 
@@ -431,7 +568,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
 
-                            
+
                         </div>
                     )}
 
@@ -518,7 +655,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
 
-                            
+
                         </div>
                     )}
 
@@ -588,7 +725,7 @@ const Dashboard = () => {
                                             <span>Views: 945</span>
                                         </div>
                                         <div className="flex justify-between">
-                                             <Link to="/updateNews" className="bg-blue-50 text-[#045C99] px-3 py-1 rounded border border-blue-200 hover:bg-blue-100 transition">
+                                            <Link to="/updateNews" className="bg-blue-50 text-[#045C99] px-3 py-1 rounded border border-blue-200 hover:bg-blue-100 transition">
                                                 Update
                                             </Link>
                                             <button className="bg-red-50 text-red-600 px-3 py-1 rounded border border-red-200 hover:bg-red-100 transition">
@@ -599,7 +736,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
 
-                           
+
                         </div>
                     )}
 
@@ -626,7 +763,7 @@ const Dashboard = () => {
                                     <div className="absolute bottom-0 left-0 right-0 p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <p className="text-sm font-medium line-clamp-2">IEEE Annual Conference 2025 Opening Ceremony</p>
                                         <div className="flex justify-between items-center mt-2">
-                                             <Link to="/updateGallery" className="bg-blue-50 text-[#045C99] px-3 py-1 rounded border border-blue-200 hover:bg-blue-100 transition">
+                                            <Link to="/updateGallery" className="bg-blue-50 text-[#045C99] px-3 py-1 rounded border border-blue-200 hover:bg-blue-100 transition">
                                                 Update
                                             </Link>
                                             <button className="bg-red-500/80 hover:bg-red-600/80 text-xs text-white px-2 py-1 rounded">
@@ -710,7 +847,7 @@ const Dashboard = () => {
                                     <div className="absolute bottom-0 left-0 right-0 p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                         <p className="text-sm font-medium line-clamp-2">Industry Networking Reception</p>
                                         <div className="flex justify-between items-center mt-2">
-                                           <Link to="/updateGallery" className="bg-blue-50 text-[#045C99] px-3 py-1 rounded border border-blue-200 hover:bg-blue-100 transition">
+                                            <Link to="/updateGallery" className="bg-blue-50 text-[#045C99] px-3 py-1 rounded border border-blue-200 hover:bg-blue-100 transition">
                                                 Update
                                             </Link>
                                             <button className="bg-red-500/80 hover:bg-red-600/80 text-xs text-white px-2 py-1 rounded">
@@ -742,9 +879,246 @@ const Dashboard = () => {
                                 </div>
                             </div>
 
+                        </div>)}
+
+                    {activeSection === 'users' && (
+                        <div className="bg-white rounded-lg shadow-md p-6">
+                            <h1 className="text-2xl font-semibold text-gray-800">Users Management</h1>
+                            <p className="text-gray-600 mt-1 mb-6">Manage IEEE members and users here</p>
+
+                            <div className="flex justify-between items-center mb-6">
+                                <div className="relative">
+
+                                </div>
+                                <button className="bg-[#045C99] text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+                                    Add New User
+                                </button>
+                            </div>                            {/* Users Grid */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {users.map(user => (
+                                    <div key={user.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+                                        <div className="p-6 flex flex-col items-center">
+                                            <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-blue-100">
+                                                <img
+                                                    src={user.image}
+                                                    alt={`${user.name}'s profile`}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                            <h3 className="text-lg font-semibold text-gray-800 mb-3 text-center">{user.name}</h3>
+
+                                            <div className="w-full space-y-3 mb-4">
+                                                <div className="flex items-center text-sm text-gray-600">
+                                                    <FaEnvelope className="mr-2 text-gray-400" />
+                                                    <span className="truncate">{user.email}</span>
+                                                </div>
+                                                <div className="flex items-center text-sm text-gray-600">
+                                                    <FaIdCard className="mr-2 text-gray-400" />
+                                                    <span>IEEE ID: {user.ieeeId}</span>
+                                                </div>
+                                            </div>                                            <div className="flex justify-between w-full mt-4">
+                                                <Link
+                                                    to={`/addExperience?id=${user.ieeeId}`}
+                                                    className="bg-blue-50 text-[#045C99] px-4 py-2 rounded border border-blue-200 hover:bg-blue-100 transition flex-1 mr-2 text-center"
+                                                >
+                                                    Experience
+                                                </Link>
+                                                <button className="bg-red-50 text-red-600 px-3 py-2 rounded border border-red-200 hover:bg-red-100 transition">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>                        </div>
+                    )}
+
+                    {activeSection === 'contacts' && (
+                        <div className="bg-white rounded-lg shadow-md p-6">
+                            <h1 className="text-2xl font-semibold text-gray-800">Contacts Management</h1>
+                            <p className="text-gray-600 mt-1 mb-6">Manage IEEE contact persons here</p>
+
+                            {/* Contacts Grid - Simplified to show only name and email */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {contacts.map(contact => (
+                                    <div key={contact.id} className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+                                        <div className="p-5 flex flex-col">
+                                            <h3 className="text-lg font-semibold text-gray-800 mb-2">{contact.name}</h3>
+
+                                            <div className="flex items-center text-sm text-gray-600 mb-4">
+                                                <FaEnvelope className="mr-2 text-gray-400" />
+                                                <span className="truncate">{contact.email}</span>
+                                            </div>
+
+                                            <button
+                                                className="w-full flex items-center justify-center bg-[#045C99] hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition mt-2"
+                                            >
+                                                <FaComment className="mr-2" />
+                                                Message
+                                            </button>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     )}
 
+                    {activeSection === 'committee' && (
+                        <div className="bg-white rounded-lg shadow-md p-6">
+                            <h1 className="text-2xl font-semibold text-gray-800">Committee Management</h1>
+                            <p className="text-gray-600 mt-1 mb-6">Add or update IEEE committee members information</p>
+
+                            <form className="space-y-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    {/* Name Input */}
+                                    <div>
+                                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                                            Full Name*
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            className="block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300 rounded-md py-2 px-3"
+                                            placeholder="Enter committee member's full name"
+                                            required
+                                        />
+                                    </div>
+
+                                    {/* Designation Input */}
+                                    <div>
+                                        <label htmlFor="designation" className="block text-sm font-medium text-gray-700 mb-1">
+                                            Designation*
+                                        </label>
+                                        <input
+                                            type="text"
+                                            id="designation"
+                                            name="designation"
+                                            className="block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300 rounded-md py-2 px-3"
+                                            placeholder="Enter position or designation"
+                                            required
+                                        />
+                                    </div>
+
+                                    {/* IEEE ID Input */}
+                                    <div>
+                                        <label htmlFor="ieeeId" className="block text-sm font-medium text-gray-700 mb-1">
+                                            IEEE ID*
+                                        </label>
+                                        <div className="relative">
+                                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                                <FaIdCard className="h-4 w-4 text-gray-400" />
+                                            </div>
+                                            <input
+                                                type="text"
+                                                id="ieeeId"
+                                                name="ieeeId"
+                                                className="pl-10 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300 rounded-md py-2 px-3"
+                                                placeholder="Enter 8-digit IEEE ID"
+                                                pattern="[0-9]{8}"
+                                                title="IEEE ID should be an 8-digit number"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Committee Type Select */}
+                                    <div>
+                                        <label htmlFor="committeeType" className="block text-sm font-medium text-gray-700 mb-1">
+                                            Committee Type*
+                                        </label>
+                                        <select
+                                            id="committeeType"
+                                            name="committeeType"
+                                            className="block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300 rounded-md py-2 px-3"
+                                            required
+                                        >
+                                            <option value="">Select committee type</option>
+                                            <option value="ExCom">ExCom</option>
+                                            <option value="Ex ExCom">Ex ExCom</option>
+                                            <option value="AdvisorPanel">Advisor Panel</option>
+                                            <option value="Volunteer">Volunteer</option>
+                                        </select>
+                                    </div>
+
+                                    {/* Facebook Link Input */}
+                                    <div>
+                                        <label htmlFor="facebookLink" className="block text-sm font-medium text-gray-700 mb-1">
+                                            Facebook Profile
+                                        </label>
+                                        <div className="relative">
+                                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                                <FaFacebook className="h-4 w-4 text-blue-600" />
+                                            </div>
+                                            <input
+                                                type="url"
+                                                id="facebookLink"
+                                                name="facebookLink"
+                                                className="pl-10 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300 rounded-md py-2 px-3"
+                                                placeholder="https://facebook.com/username"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* LinkedIn Link Input */}
+                                    <div>
+                                        <label htmlFor="linkedinLink" className="block text-sm font-medium text-gray-700 mb-1">
+                                            LinkedIn Profile
+                                        </label>
+                                        <div className="relative">
+                                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                                <FaLinkedin className="h-4 w-4 text-blue-800" />
+                                            </div>
+                                            <input
+                                                type="url"
+                                                id="linkedinLink"
+                                                name="linkedinLink"
+                                                className="pl-10 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300 rounded-md py-2 px-3"
+                                                placeholder="https://linkedin.com/in/username"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Image Upload */}
+                                <div>
+                                    <label htmlFor="profileImage" className="block text-sm font-medium text-gray-700 mb-1">
+                                        Profile Image*
+                                    </label>
+                                    <div className="mt-1 flex items-center">
+                                        <span className="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100 mr-4">
+                                            <svg className="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                                            </svg>
+                                        </span>
+                                        <input
+                                            type="file"
+                                            id="profileImage"
+                                            name="profileImage"
+                                            accept="image/*"
+                                            className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                                            required
+                                        />
+                                    </div>
+                                    <p className="mt-1 text-xs text-gray-500">
+                                        Recommended: Square image, at least 300x300 pixels
+                                    </p>
+                                </div>
+
+                                {/* Submit Button */}
+                                <div className="pt-4">
+                                    <button
+                                        type="submit"
+                                        className="w-full md:w-auto bg-[#045C99] text-white py-2 px-6 rounded-md font-medium hover:bg-blue-700 transition duration-300 flex justify-center items-center"
+                                    >
+                                        Add Committee Member
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    )}
 
                 </main>
             </div>

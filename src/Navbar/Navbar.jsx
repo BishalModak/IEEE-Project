@@ -107,10 +107,10 @@ const Navbar = () => {
             <div className="lg:flex p-2  hidden  justify-center  flex-row  w-full mx-auto ">
                 <ul className="flex flex-wrap  w-[95%] mx-auto justify-center gap-x-10 items-center  text-white font-semibold  relative">
                     <div className="flex items-center gap-4">
-                        <img src="../../public/img/ieee_logo.png" alt="IEEE Logo" className=" w-50 mr-4" />
+                        <img src="https://i.ibb.co/Kxt1VLrP/ieeelogo.png" alt="IEEE Logo" className=" w-50 mr-4" />
                     </div>
                     <li><a href="/" className='md:text-xl text-2xl lg:text-[18px] '><span className={`hover:text-blue-300 ${isHomeActive
-                        ? "text-blue-300 border-b-2 border-blue-300"
+                        ? "text-white border-b-2 border-white 0"
                         : "text-white"
                         }`}>Home</span></a></li>
 
@@ -121,7 +121,7 @@ const Navbar = () => {
                             <div className='flex items-center gap-2'>
                                 <span
                                     className={`hover:text-blue-300 ${isEventsActive || isNewsActive || isAchievementActive
-                                        ? "text-blue-300 border-b-2 border-blue-300"
+                                        ? "text-white border-b-2 border-white 0"
                                         : "text-white"
                                         }`}
                                 >
@@ -162,7 +162,7 @@ const Navbar = () => {
                     <Link to={"/membersPage"} className='md:text-xl text-2xl lg:text-[18px]'>
                         <span
                             className={`hover:text-blue-300 ${isMembersActive
-                                ? "text-blue-300 border-b-2 border-blue-300"
+                                ? "text-white border-b-2 border-white 0"
                                 : "text-white"
                                 }`}
                         >
@@ -187,7 +187,7 @@ const Navbar = () => {
                                         isIEEEBangladeshsectionActive ||
                                         isIEEELUBRANCHActive ||
                                         isfaqActive
-                                        ? "text-blue-300 border-b-2 border-blue-300"
+                                        ? "text-white border-b-2 border-white 0"
                                         : "text-white"
                                         }`}
                                 >
@@ -203,11 +203,7 @@ const Navbar = () => {
                         {/* Dropdown on hover */}
                         <div className="absolute top-full left-0 mt-8 w-64  bg-black text-white rounded shadow-lg z-20 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300">
                             <ul>
-                                <li>
-                                    <Link to="/join" className="block px-4 py-2 hover:bg-[#045C99]">
-                                        Join With Us
-                                    </Link>
-                                </li>
+
                                 <li>
                                     <Link to="/IEEE" className="block px-4 py-2 hover:bg-[#045C99]">
                                         IEEE
@@ -246,7 +242,7 @@ const Navbar = () => {
                                         ismegazineActive ||
                                         isgalleryActive ||
                                         istoolkitActive
-                                        ? "text-blue-300 border-b-2 border-blue-300"
+                                        ? "text-white border-b-2 border-white 0"
                                         : "text-white"
                                         }`}
                                 >
@@ -290,14 +286,14 @@ const Navbar = () => {
                         </div>
                     </li>
 
-                    <li><Link to={"/contact"} className='md:text-xl text-2xl lg:text-[18px]' ><span className={`hover:text-blue-300 ${iscontactActive ? "text-blue-300 border-b-2 border-blue-300 " : "text-white "} `}>Contact</span></Link></li>
+                    <li><Link to={"/contact"} className='md:text-xl text-2xl lg:text-[18px]' ><span className={`hover:text-blue-300 ${iscontactActive ? "text-white border-b-2 border-white 0 " : "text-white "} `}>Contact</span></Link></li>
 
                     <li className="relative group">
                         <button onMouseEnter={() => setIsGetInvolvedOpen(!isGetInvolvedOpen)} onMouseLeave={() => setIsGetInvolvedOpen(!isGetInvolvedOpen)} className="md:text-xl text-2xl lg:text-[18px]">
                             <div className='flex items-center gap-2'>
                                 <span
                                     className={`hover:text-blue-300 ${isAddActive || isWriteBlogActive
-                                        ? "text-blue-300 border-b-2 border-blue-300"
+                                        ? "text-white border-b-2 border-white 0"
                                         : "text-white"
                                         }`}
                                 >
@@ -348,9 +344,9 @@ const Navbar = () => {
             {/* --------------------------------------------------------------------------------------- */}
 
             {/* Mobile navigation */}
-            <div className="lg:hidden flex justify-between px-6 py-4 bg-[#045C99]">
-                <div className="flex items-center gap-4">
-                    <img src="../../public/img/ieee_logo.png" alt="IEEE Logo" className="md:w-50 w-32" />
+            <div className="lg:hidden flex justify-between px-6 h-30  py-8 bg-[#045C99]">
+                <div className="flex items-center gap-4 ">
+                    <img src="https://i.ibb.co/Myw1pBH2/ieeelogo.png" alt="IEEE Logo" className="md:w-50 w-50" />
                 </div>
                 <button
                     className="text-white md:text-3xl text-2xl lg:text-2xl  focus:outline-none"
@@ -395,7 +391,7 @@ const Navbar = () => {
                             <a href={"/membersPage"} className='w-full text-left'>
                                 <span
                                     className={`hover:text-blue-300 ${isMembersActive
-                                        ? "text-blue-300 border-b-2 border-blue-300"
+                                        ? "text-white border-b-2 border-white 0"
                                         : "text-white"
                                         }`}
                                 >
@@ -408,11 +404,7 @@ const Navbar = () => {
                             <button onClick={() => setMobileSubMenu(mobileSubMenu === 'about' ? null : 'about')} className="w-full text-left">About</button>
                             {mobileSubMenu === 'about' && (
                                 <ul className="pl-4 mt-2 space-y-1 text-sm">
-                                    <li>
-                                        <Link to="/join" className="block px-4 py-2 hover:bg-[#045C99]">
-                                            Join With Us
-                                        </Link>
-                                    </li>
+
                                     <li>
                                         <Link to="/IEEE" className="block px-4 py-2 hover:bg-[#045C99]">
                                             IEEE

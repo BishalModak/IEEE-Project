@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
-    name: '',
+
     email: '',
-    memberType: 'local',
+    IEEEID: '',
     password: '',
     
   });
@@ -36,19 +36,7 @@ const SignIn = () => {
 
           <div className="bg-white p-6 rounded-lg">
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="text-left">
-                <label htmlFor="name" className="block mb-2 text-gray-700">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Name"
-                  className="w-full border border-gray-300 rounded p-2"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+              
 
               <div className="text-left">
                 <label htmlFor="email" className="block mb-2 text-gray-700">Email</label>
@@ -63,34 +51,21 @@ const SignIn = () => {
                   required
                 />
               </div>
-
               <div className="text-left">
-                <label className="block mb-2 text-gray-700">Member type</label>
-                <div className="space-y-2">
-                  <div className="flex items-center">
-                    <input
-                      type="radio"
-                      id="global"
-                      name="memberType"
-                      className="mr-2"
-                      checked={formData.memberType === 'global'}
-                      onChange={handleChange}
-                    />
-                    <label htmlFor="global" className="text-gray-700">Global Member</label>
-                  </div>
-                  <div className="flex items-center">
-                    <input
-                      type="radio"
-                      id="local"
-                      name="memberType"
-                      className="mr-2"
-                      checked={formData.memberType === 'local'}
-                      onChange={handleChange}
-                    />
-                    <label htmlFor="local" className="text-gray-700">Local Member</label>
-                  </div>
-                </div>
+                <label htmlFor="IEEEID" className="block mb-2 text-gray-700">IEEE ID</label>
+                <input
+                  type="text"
+                  id="IEEEID"
+                  name="IEEEID"
+                  placeholder="IEEE ID"
+                  className="w-full border border-gray-300 rounded p-2"
+                  value={formData.IEEEID}
+                  onChange={handleChange}
+                  required
+                />
               </div>
+
+              
 
               <div className="text-left">
                 <label htmlFor="password" className="block mb-2 text-gray-700">Password</label>

@@ -241,35 +241,63 @@ const AboutIEEE = () => {
                         community. The organization also offers numerous prestigious achievement awards
                         across various fields, recognizing outstanding contributions and excellence.
                         To learn more, pleaseplease visit-
-                    </p>
-
-                    {/* Images */}
+                    </p>                    {/* Images */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {/* Image 1 */}
-                        <div className="bg-gray-200 h-auto rounded-md overflow-hidden">
+                        <div className="bg-gray-200 h-64 rounded-md overflow-hidden relative group">
                             <img
                                 src="https://i.ibb.co.com/TqWqd8T1/trophy.jpg"
                                 alt="Achievement 1"
-                                className="object-cover w-full h-full"
+                                className="object-cover w-full h-full filter blur-sm group-hover:blur-none transition-all duration-300"
                             />
+                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a
+                                    href="https://www.ieee.org/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-[#045C99] hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition-colors duration-200"
+                                >
+                                    Learn More
+                                </a>
+                            </div>
                         </div>
 
                         {/* Image 2 */}
-                        <div className="bg-gray-200 h-auto rounded-md overflow-hidden">
+                        <div className="bg-gray-200 h-64 rounded-md overflow-hidden relative group">
                             <img
                                 src="https://i.ibb.co.com/TqWqd8T1/trophy.jpg"
                                 alt="Achievement 2"
-                                className="object-cover w-full h-full"
+                                className="object-cover w-full h-full filter blur-sm group-hover:blur-none transition-all duration-300"
                             />
+                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a
+                                    href="https://www.ieee.org/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-[#045C99] hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition-colors duration-200"
+                                >
+                                    Learn More
+                                </a>
+                            </div>
                         </div>
 
                         {/* Image 3 */}
-                        <div className="bg-gray-200 h-auto rounded-md overflow-hidden">
+                        <div className="bg-gray-200 h-64 rounded-md overflow-hidden relative group">
                             <img
                                 src="https://i.ibb.co.com/TqWqd8T1/trophy.jpg"
                                 alt="Achievement 3"
-                                className="object-cover w-full h-full"
+                                className="object-cover w-full h-full filter blur-sm group-hover:blur-none transition-all duration-300"
                             />
+                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a
+                                    href="https://www.ieee.org/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-[#045C99] hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition-colors duration-200"
+                                >
+                                    Learn More
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

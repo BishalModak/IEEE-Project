@@ -58,7 +58,7 @@ const SingleBlog = () => {
     return (
         <div className="bg-gray-50 min-h-screen">
             {/* Hero Banner */}
-            <div className="relative w-full h-[50vh] bg-black">
+            <div className="relative w-full mt-1 h-[50vh] bg-black">
                 <div
                     className="absolute inset-0 bg-cover bg-center opacity-70"
                     style={{ backgroundImage: `url(${blog.img})` }}

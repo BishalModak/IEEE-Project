@@ -59,15 +59,21 @@ const UserPage = () => {
                         <Link to="/" className="text-white hover:text-blue-200">
                             &larr; Back to Home
                         </Link>
-                    </div>
-
-                    {/* Profile image */}
+                    </div>                    {/* Profile image */}
                     <div className="absolute -bottom-16 left-8">
-                        <img
-                            src={userData.profileImage}
-                            alt={`${userData.name}'s profile`}
-                            className="w-32 h-32 rounded-full border-4 border-white object-cover bg-white"
-                        />
+                        <div className="relative">
+                            <img
+                                src={userData.profileImage}
+                                alt={`${userData.name}'s profile`}
+                                className="w-32 h-32 rounded-full border-4 border-white object-cover bg-white"
+                            />
+                            <Link
+                                to={`/uploadUserImg?id=${encodeURIComponent(userData.ieeeId)}`}
+                                className="absolute bottom-0 left-0 right-0 bg-blue-600 text-white text-xs font-medium py-1 text-center hover:bg-blue-700 transition-colors duration-200"
+                            >
+                                Update Photo
+                            </Link>
+                        </div>
                     </div>
                 </div>
 
@@ -139,7 +145,7 @@ const UserPage = () => {
                         </div>
                     </div>
 
-             
+
                 </div>
             </div>
         </div>

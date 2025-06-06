@@ -19,7 +19,7 @@ const Committee = () => {
                     <p className="text-gray-200">Dedicated professionals building the digital future of IEEE</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mt-5 px-6 pb-12">
+                <div className="flex flex-wrap justify-center items-center gap-10 mt-5 px-6 pb-12">
                     {coordinators.map((person, index) => (
                         <div
                             key={index}
@@ -53,7 +53,7 @@ const Committee = () => {
                     <p className="text-gray-200">Dedicated professionals building the digital future of IEEE</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mt-5 px-6 pb-12">
+                <div className="flex flex-wrap justify-center items-center gap-10 mt-5 px-6 pb-12 ">
                     {coordinators.map((person, index) => (
                         <div
                             key={index}
@@ -87,7 +87,7 @@ const Committee = () => {
                     <p className="text-gray-200">Dedicated professionals building the digital future of IEEE</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mt-5 px-6 pb-12">
+                <div className="flex flex-wrap justify-center items-center gap-10 mt-5 px-6 pb-12 ">
                     {coordinators.map((person, index) => (
                         <div
                             key={index}
@@ -121,7 +121,7 @@ const Committee = () => {
                     <p className="text-gray-200">Dedicated professionals building the digital future of IEEE</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mt-5 px-6 pb-12">
+                <div className="flex flex-wrap justify-center items-center gap-10 mt-5 px-6 pb-12 ">
                     {coordinators.map((person, index) => (
                         <div
                             key={index}
@@ -155,7 +155,7 @@ const Committee = () => {
                     <p className="text-gray-200">Dedicated professionals building the digital future of IEEE</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mt-5 px-6 pb-12">
+                <div className="flex flex-wrap justify-center items-center gap-10 mt-5 px-6 pb-12 ">
                     {coordinators.map((person, index) => (
                         <div
                             key={index}
@@ -189,7 +189,7 @@ const Committee = () => {
                     <p className="text-gray-200">Dedicated professionals building the digital future of IEEE</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mt-5 px-6 pb-12">
+                <div className="flex flex-wrap justify-center items-center gap-10 mt-5 px-6 pb-12 ">
                     {coordinators.map((person, index) => (
                         <div
                             key={index}
@@ -223,7 +223,7 @@ const Committee = () => {
                     <p className="text-gray-200">Dedicated professionals building the digital future of IEEE</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mt-5 px-6 pb-12">
+                <div className="flex flex-wrap justify-center items-center gap-10 mt-5 px-6 pb-12 ">
                     {coordinators.map((person, index) => (
                         <div
                             key={index}
@@ -257,7 +257,7 @@ const Committee = () => {
                     <p className="text-gray-200">Dedicated professionals building the digital future of IEEE</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mt-5 px-6 pb-12">
+                <div className="flex flex-wrap justify-center items-center gap-10 mt-5 px-6 pb-12 ">
                     {coordinators.map((person, index) => (
                         <div
                             key={index}
@@ -291,7 +291,7 @@ const Committee = () => {
                     <p className="text-gray-200">Dedicated professionals building the digital future of IEEE</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mt-5 px-6 pb-12">
+                <div className="flex flex-wrap justify-center items-center gap-10 mt-5 px-6 pb-12 ">
                     {coordinators.map((person, index) => (
                         <div
                             key={index}
@@ -325,7 +325,7 @@ const Committee = () => {
                     <p className="text-gray-200">Dedicated professionals building the digital future of IEEE</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 mt-5 px-6 pb-12">
+                <div className="flex flex-wrap justify-center items-center gap-10 mt-5 px-6 pb-12 ">
                     {coordinators.map((person, index) => (
                         <div
                             key={index}

@@ -66,6 +66,9 @@ import UpdateEvent from "./Event/UpdateEvent.jsx";
 import UpdateGallery from "./Gallery/UpdateGallery.jsx";
 import UpdateResearch from "./AddResearch/UpdateResearch.jsx";
 import UpdateBlog from "./BlogWriting/UpdateBlog.jsx";
+import ExExCom from "./Members/ExExCom.jsx";
+import AddExperience from "./Dashboard/AddExperience.jsx";
+import UploadUserPic from "./UserPage/UploadUserPic.jsx";
 
 
 const router = createBrowserRouter([
@@ -248,6 +251,10 @@ const router = createBrowserRouter([
         element: <Committee></Committee>
       },
       {
+        path: '/members/exexcom',
+        element: <ExExCom></ExExCom>
+      },
+      {
         path: '/members/developers',
         element: <Developers></Developers>
       },
@@ -323,8 +330,16 @@ const router = createBrowserRouter([
     element: <UserPage></UserPage>
   },
   {
+    path: '/uploadUserImg',
+    element: <UploadUserPic></UploadUserPic>
+  },
+  {
     path: '/dashboard',
     element: <Dashboard></Dashboard>
+  },
+  {
+    path: '/addExperience',
+    element: <AddExperience></AddExperience>
   },
   {
     path: 'updateBlog',
