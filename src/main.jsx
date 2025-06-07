@@ -69,6 +69,8 @@ import UpdateBlog from "./BlogWriting/UpdateBlog.jsx";
 import ExExCom from "./Members/ExExCom.jsx";
 import AddExperience from "./Dashboard/AddExperience.jsx";
 import UploadUserPic from "./UserPage/UploadUserPic.jsx";
+import Messages from "./Dashboard/Messages.jsx";
+import Assign from "./Dashboard/Assign.jsx";
 
 
 const router = createBrowserRouter([
@@ -344,6 +346,14 @@ const router = createBrowserRouter([
   {
     path: 'updateBlog',
     element: <UpdateBlog></UpdateBlog>
+  },
+  {
+    path: '/messages',
+    element: <Messages></Messages>
+  },
+  {
+    path: '/assign',
+    element: <Assign></Assign>
   },
 
 

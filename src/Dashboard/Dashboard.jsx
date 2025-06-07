@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaNewspaper, FaBook, FaCalendarAlt, FaBlog, FaImages, FaUsers, FaSignOutAlt, FaBars, FaTimes, FaMapMarkerAlt, FaEnvelope, FaIdCard, FaAddressBook, FaComment, FaUserTie, FaFacebook, FaLinkedin } from 'react-icons/fa';
+import { FaHome, FaNewspaper, FaBook, FaCalendarAlt, FaBlog, FaImages, FaUsers, FaSignOutAlt, FaBars, FaTimes, FaMapMarkerAlt, FaEnvelope, FaIdCard, FaAddressBook, FaComment, FaUserTie, FaFacebook, FaLinkedin, FaTrophy, FaChartBar, FaUserFriends, FaAward, FaIndustry, FaProjectDiagram, FaTools } from 'react-icons/fa';
 
 const Dashboard = () => {
     const [isSidebarOpen, setSidebarOpen] = useState(true);
@@ -118,14 +118,58 @@ const Dashboard = () => {
             image: "/img/Badar.jpg",
             department: "Mechanical Engineering"
         }
-    ];
-
-    // Mock stats for dashboard overview
+    ];    // Mock stats for dashboard overview
     const stats = [
         { id: 1, title: 'Total Research Papers', count: 124, icon: <FaBook /> },
         { id: 2, title: 'Published Magazines', count: 18, icon: <FaNewspaper /> },
         { id: 3, title: 'Upcoming Events', count: 7, icon: <FaCalendarAlt /> },
         { id: 4, title: 'New Blog Posts', count: 32, icon: <FaBlog /> },
+    ];
+
+    // Mock achievements data
+    const achievements = [
+        {
+            id: 1,
+            title: "IEEE Outstanding Branch Counselor Award",
+            description: "Recognizes IEEE Student Branch Counselors who have demonstrated exemplary involvement with their Student Branch.",
+            category: "Branch Awards",
+            year: 2023
+        },
+        {
+            id: 2,
+            title: "IEEE Regional Exemplary Student Branch Award",
+            description: "Recognizes Student Branches for their outstanding activities, membership growth, and technical programs.",
+            category: "Branch Awards",
+            year: 2023
+        },
+        {
+            id: 3,
+            title: "IEEE WIE Student Branch Affinity Group of the Year",
+            description: "Honors exceptional Women in Engineering Student Branch Affinity Groups for their contributions.",
+            category: "Special Recognition",
+            year: 2023
+        },
+        {
+            id: 4,
+            title: "IEEE Student Paper Contest Winner",
+            description: "Awarded to students with exceptional research papers presented at IEEE conferences.",
+            category: "Individual Awards",
+            year: 2023
+        },
+        {
+            id: 5,
+            title: "IEEE Richard E. Merwin Student Scholarship",
+            description: "Recognizes student leaders who show promise in their academic careers.",
+            category: "Scholarships",
+            year: 2022
+        },
+        {
+            id: 6,
+            title: "IEEE Computer Society Upsilon Pi Epsilon Award",
+            description: "Honors academic excellence for students in computer science related fields.",
+            category: "Academic Excellence",
+            year: 2022
+        }
     ];
 
 
@@ -226,14 +270,30 @@ const Dashboard = () => {
                                 <FaAddressBook className="text-xl" />
                                 {isSidebarOpen && <span className="ml-4">Contacts</span>}
                             </button>
-                        </li>
-                        <li>
+                        </li>                        <li>
                             <button
                                 onClick={() => setActiveSection('committee')}
                                 className={`flex items-center w-full p-3 rounded-lg hover:bg-blue-700 transition duration-200 ${activeSection === 'committee' ? 'bg-blue-700' : ''}`}
                             >
                                 <FaUserTie className="text-xl" />
                                 {isSidebarOpen && <span className="ml-4">Committee</span>}
+                            </button>
+                        </li>                        <li>
+                            <button
+                                onClick={() => setActiveSection('achievements')}
+                                className={`flex items-center w-full p-3 rounded-lg hover:bg-blue-700 transition duration-200 ${activeSection === 'achievements' ? 'bg-blue-700' : ''}`}
+                            >
+                                <FaTrophy className="text-xl" />
+                                {isSidebarOpen && <span className="ml-4">Achievements</span>}
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                onClick={() => setActiveSection('statistics')}
+                                className={`flex items-center w-full p-3 rounded-lg hover:bg-blue-700 transition duration-200 ${activeSection === 'statistics' ? 'bg-blue-700' : ''}`}
+                            >
+                                <FaChartBar className="text-xl" />
+                                {isSidebarOpen && <span className="ml-4">Statistics</span>}
                             </button>
                         </li>
                     </ul>
@@ -950,14 +1010,13 @@ const Dashboard = () => {
                                             <div className="flex items-center text-sm text-gray-600 mb-4">
                                                 <FaEnvelope className="mr-2 text-gray-400" />
                                                 <span className="truncate">{contact.email}</span>
-                                            </div>
-
-                                            <button
+                                            </div>                                            <Link
+                                                to={`/messages?email=${encodeURIComponent(contact.email)}`}
                                                 className="w-full flex items-center justify-center bg-[#045C99] hover:bg-blue-600 text-white font-medium py-2 px-4 rounded transition mt-2"
                                             >
                                                 <FaComment className="mr-2" />
                                                 Message
-                                            </button>
+                                            </Link>
                                         </div>
                                     </div>
                                 ))}
@@ -1115,8 +1174,254 @@ const Dashboard = () => {
                                     >
                                         Add Committee Member
                                     </button>
+                                </div>                            </form>
+                        </div>
+                    )}
+
+                    {/* Achievements Section */}
+                    {activeSection === 'achievements' && (
+                        <div className="bg-white rounded-lg shadow-md p-6">
+                            <h1 className="text-2xl font-semibold text-gray-800">Achievements Management</h1>
+                            <p className="text-gray-600 mt-1 mb-6">IEEE achievements that can be assigned to members</p>
+
+                            <div className="space-y-4">
+                                {achievements.map(achievement => (
+                                    <div key={achievement.id} className="bg-white border border-gray-200 rounded-lg shadow-sm p-4 flex justify-between items-center hover:shadow-md transition-shadow">
+                                        <div className="flex-1">
+                                            <div className="flex items-center">
+                                                <div className="mr-4 text-amber-500">
+                                                    <FaTrophy className="text-2xl" />
+                                                </div>
+                                                <div>
+                                                    <h3 className="font-medium text-lg text-gray-800">{achievement.title}</h3>
+                                                    <div className="flex items-center mt-1 gap-2">
+                                                        <span className="bg-blue-100 text-blue-800 text-xs px-2.5 py-0.5 rounded-full">
+                                                            {achievement.category}
+                                                        </span>
+                                                        <span className="text-gray-500 text-sm">
+                                                            Year: {achievement.year}
+                                                        </span>
+                                                    </div>
+                                                    <p className="text-gray-600 mt-2 text-sm">
+                                                        {achievement.description}
+                                                    </p>                                                </div>
+                                            </div>
+                                        </div>
+                                        <Link to={`/assign?achievement=${achievement.id}`} className="bg-[#045C99] text-white py-2 px-4 rounded hover:bg-blue-700 transition whitespace-nowrap ml-4 inline-block">
+                                            Assign
+                                        </Link>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="mt-6">
+                                <button className="flex items-center bg-[#045C99] text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                                    <span className="mr-2">Add New Achievement</span> +
+                                </button>                            </div>
+                        </div>
+                    )}
+
+                    {/* Statistics Section */}
+                    {activeSection === 'statistics' && (
+                        <div className="bg-white rounded-lg shadow-md p-6">
+                            <h1 className="text-2xl font-semibold text-gray-800">IEEE Branch Statistics</h1>
+                            <p className="text-gray-600 mt-1 mb-6">Update IEEE branch statistics and metrics</p>
+
+                            <form className="space-y-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    {/* Active Members Input */}
+                                    <div>
+                                        <label htmlFor="activeMembers" className="block text-sm font-medium text-gray-700 mb-1">
+                                            Active Members
+                                        </label>
+                                        <div className="relative mt-1">
+                                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                                <FaUserFriends className="h-4 w-4 text-gray-400" />
+                                            </div>
+                                            <input
+                                                type="number"
+                                                id="activeMembers"
+                                                name="activeMembers"
+                                                min="0"
+                                                className="pl-10 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300 rounded-md py-2 px-3"
+                                                placeholder="Enter count"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Annual Events Input */}
+                                    <div>
+                                        <label htmlFor="annualEvents" className="block text-sm font-medium text-gray-700 mb-1">
+                                            Annual Events Count
+                                        </label>
+                                        <div className="relative mt-1">
+                                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                                <FaCalendarAlt className="h-4 w-4 text-gray-400" />
+                                            </div>
+                                            <input
+                                                type="number"
+                                                id="annualEvents"
+                                                name="annualEvents"
+                                                min="0"
+                                                className="pl-10 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300 rounded-md py-2 px-3"
+                                                placeholder="Enter count"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Technical Workshops Input */}
+                                    <div>
+                                        <label htmlFor="technicalWorkshops" className="block text-sm font-medium text-gray-700 mb-1">
+                                            Technical Workshop Count
+                                        </label>
+                                        <div className="relative mt-1">
+                                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                                <FaTools className="h-4 w-4 text-gray-400" />
+                                            </div>
+                                            <input
+                                                type="number"
+                                                id="technicalWorkshops"
+                                                name="technicalWorkshops"
+                                                min="0"
+                                                className="pl-10 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300 rounded-md py-2 px-3"
+                                                placeholder="Enter count"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Industry Partners Input */}
+                                    <div>
+                                        <label htmlFor="industryPartners" className="block text-sm font-medium text-gray-700 mb-1">
+                                            Industry Partners Count
+                                        </label>
+                                        <div className="relative mt-1">
+                                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                                <FaIndustry className="h-4 w-4 text-gray-400" />
+                                            </div>
+                                            <input
+                                                type="number"
+                                                id="industryPartners"
+                                                name="industryPartners"
+                                                min="0"
+                                                className="pl-10 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300 rounded-md py-2 px-3"
+                                                placeholder="Enter count"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Awards Won Input */}
+                                    <div>
+                                        <label htmlFor="awardsWon" className="block text-sm font-medium text-gray-700 mb-1">
+                                            Awards Won Count
+                                        </label>
+                                        <div className="relative mt-1">
+                                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                                <FaAward className="h-4 w-4 text-gray-400" />
+                                            </div>
+                                            <input
+                                                type="number"
+                                                id="awardsWon"
+                                                name="awardsWon"
+                                                min="0"
+                                                className="pl-10 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300 rounded-md py-2 px-3"
+                                                placeholder="Enter count"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Events Organized Input */}
+                                    <div>
+                                        <label htmlFor="eventsOrganized" className="block text-sm font-medium text-gray-700 mb-1">
+                                            Events Organized Count
+                                        </label>
+                                        <div className="relative mt-1">
+                                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                                <FaCalendarAlt className="h-4 w-4 text-gray-400" />
+                                            </div>
+                                            <input
+                                                type="number"
+                                                id="eventsOrganized"
+                                                name="eventsOrganized"
+                                                min="0"
+                                                className="pl-10 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300 rounded-md py-2 px-3"
+                                                placeholder="Enter count"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+
+                                    {/* Projects Completed Input */}
+                                    <div>
+                                        <label htmlFor="projectsCompleted" className="block text-sm font-medium text-gray-700 mb-1">
+                                            Projects Completed Count
+                                        </label>
+                                        <div className="relative mt-1">
+                                            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                                <FaProjectDiagram className="h-4 w-4 text-gray-400" />
+                                            </div>
+                                            <input
+                                                type="number"
+                                                id="projectsCompleted"
+                                                name="projectsCompleted"
+                                                min="0"
+                                                className="pl-10 block w-full shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm border-gray-300 rounded-md py-2 px-3"
+                                                placeholder="Enter count"
+                                                required
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Submit Button */}
+                                <div className="pt-4">
+                                    <button
+                                        type="submit"
+                                        className="w-full md:w-auto bg-[#045C99] text-white py-2 px-6 rounded-md font-medium hover:bg-blue-700 transition duration-300 flex justify-center items-center"
+                                    >
+                                        Update Statistics
+                                    </button>
                                 </div>
                             </form>
+
+                            {/* Current Statistics */}
+                            {/* <div className="mt-10">
+                                <h2 className="text-lg font-medium text-gray-800 mb-4">Current Statistics</h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                                    <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
+                                        <div className="flex justify-between items-center">
+                                            <div className="text-sm font-medium text-gray-500">Active Members</div>
+                                            <FaUserFriends className="text-blue-500" />
+                                        </div>
+                                        <div className="text-2xl font-bold text-gray-800 mt-2">147</div>
+                                    </div>
+                                    <div className="bg-green-50 rounded-lg p-4 border border-green-100">
+                                        <div className="flex justify-between items-center">
+                                            <div className="text-sm font-medium text-gray-500">Events This Year</div>
+                                            <FaCalendarAlt className="text-green-500" />
+                                        </div>
+                                        <div className="text-2xl font-bold text-gray-800 mt-2">23</div>
+                                    </div>
+                                    <div className="bg-amber-50 rounded-lg p-4 border border-amber-100">
+                                        <div className="flex justify-between items-center">
+                                            <div className="text-sm font-medium text-gray-500">Awards Won</div>
+                                            <FaAward className="text-amber-500" />
+                                        </div>
+                                        <div className="text-2xl font-bold text-gray-800 mt-2">12</div>
+                                    </div>
+                                    <div className="bg-purple-50 rounded-lg p-4 border border-purple-100">
+                                        <div className="flex justify-between items-center">
+                                            <div className="text-sm font-medium text-gray-500">Industry Partners</div>
+                                            <FaIndustry className="text-purple-500" />
+                                        </div>
+                                        <div className="text-2xl font-bold text-gray-800 mt-2">8</div>
+                                    </div>
+                                </div>
+                            </div> */}
                         </div>
                     )}
 
