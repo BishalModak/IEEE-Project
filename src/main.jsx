@@ -71,6 +71,7 @@ import AddExperience from "./Dashboard/AddExperience.jsx";
 import UploadUserPic from "./UserPage/UploadUserPic.jsx";
 import Messages from "./Dashboard/Messages.jsx";
 import Assign from "./Dashboard/Assign.jsx";
+import AddAcheivement from "./Dashboard/AddAcheivement.jsx";
 
 
 const router = createBrowserRouter([
@@ -344,6 +345,10 @@ const router = createBrowserRouter([
     element: <AddExperience></AddExperience>
   },
   {
+    path: '/addAcheivement',
+    element: <AddAcheivement></AddAcheivement>
+  },
+  {
     path: 'updateBlog',
     element: <UpdateBlog></UpdateBlog>
   },
@@ -355,6 +360,7 @@ const router = createBrowserRouter([
     path: '/assign',
     element: <Assign></Assign>
   },
+
 
 
 

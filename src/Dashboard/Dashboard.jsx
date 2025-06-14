@@ -1215,9 +1215,9 @@ const Dashboard = () => {
                             </div>
 
                             <div className="mt-6">
-                                <button className="flex items-center bg-[#045C99] text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                                <Link to='/addAcheivement' className="flex items-center bg-[#045C99] text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                                     <span className="mr-2">Add New Achievement</span> +
-                                </button>                            </div>
+                                </Link>                            </div>
                         </div>
                     )}
 
