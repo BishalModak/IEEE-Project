@@ -64,7 +64,7 @@ const Event = () => {
 
                             <div key={i} className="bg-white p-4 rounded-2xl shadow-xl transition-transform duration-300 hover:scale-105 max-w-[480px]">
                                 <img
-                                    src="/img/rn1.jpg"
+                                    src="/img/ResearchBootcamp.jpg"
                                     alt="Event"
                                     className="rounded-xl mb-4 w-full object-cover"
                                 />

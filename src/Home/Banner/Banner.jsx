@@ -7,7 +7,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import './styles.css';
 
 const Banner = () => {
-    
+
 
     const overlayText = (
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white bg-black/40 px-4">
@@ -26,8 +26,8 @@ const Banner = () => {
     );
 
     return (
-        
-        <div className="relative mt-[5px] w-full h-[300px] md:h-[500px] lg:h-[500px] ">
+        // give this to tahsin
+        <div className="relative mt-[5px]  h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -40,21 +40,26 @@ const Banner = () => {
                 }}
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
-                
-                className="mySwiper relative"
+                className="mySwiper relative h-full"
             >
                 {[
-                    "b3.jpg", "b2.jpg", "b4.jpg",
+                    "ResearchBootcamp.jpg", "timeBanner.png", "LandscapeImg.jpg", "ArafImg.jpg",
                     "gellary1.jpg", "gellary3.jpg", "gellary7.jpg",
                     "eventbaner.jpg", "about..jpg"
                 ].map((img, index) => (
-                    <SwiperSlide key={index} className="relative ">
-                        <img src={`../../../public/img/${img}`} alt="" className="w-[70px] h-[70px] object-cover" />
+                    <SwiperSlide key={index} className="relative h-full">         <div className="absolute inset-0">
+                        <img
+                            src={`/img/${img}`}
+                            alt={`IEEE Banner ${index + 1}`}
+                            className=" h-[400px] md:h-[500px] lg:h-[600px] object-fit"
+                            loading="eager"
+                        />
+                    </div>
                         {overlayText}
                     </SwiperSlide>
                 ))}
 
-                
+
             </Swiper>
         </div>
 
