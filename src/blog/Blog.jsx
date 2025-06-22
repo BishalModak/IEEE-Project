@@ -51,10 +51,11 @@ const Blog = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* Blog  */}
 
-                        
+
+          
                             {datas.map((news, i) => (
-                                <div key={i} className="shadow-md rounded-lg pb-4 overflow-hidden">
-                                    <img src={news.img} alt={news.title} className="h-40 w-full object-cover" />
+                                <div key={i} className="shadow-md rounded-lg pb-4">
+                                    <img src={news.img} alt={news.title} className="h-72 w-full " />
                                     <div className="flex gap-6 p-3 text-sm text-gray-500">
                                         <p><FaCalendarDays className="inline mr-1" /> Date</p>
                                         <p><FaUser className="inline mr-1" /> Full Name</p>
@@ -64,7 +65,8 @@ const Blog = () => {
                                     <a href={`/blogs/${news.id}`} className="text-[#045C99] px-4 hover:underline">Read More</a>
                                 </div>
                             ))}
-                        
+                  
+
 
                     </div>
                 </div>
@@ -75,7 +77,7 @@ const Blog = () => {
                     <div className="shadow-md rounded-lg p-4">
                         <h3 className="text-lg font-semibold mb-4">Popular Post</h3>
                         <div className="flex items-center gap-4 mb-3">
-                            <img src="img/post1.png" alt="Post 1" className="w-16 h-16 rounded object-cover" />
+                            <img src="../../public/img/ResearchBootcamp.jpg" alt="Post 1" className="w-16 h-16 rounded object-cover" />
                             <div>
                                 <h5 className="font-medium">Cybersecurity Best Practices</h5>
                                 <p className="text-sm text-gray-600">March 05, 2024</p>

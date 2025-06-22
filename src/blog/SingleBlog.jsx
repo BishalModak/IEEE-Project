@@ -60,7 +60,7 @@ const SingleBlog = () => {
             {/* Hero Banner */}
             <div className="relative w-full mt-1 h-[50vh] bg-black">
                 <div
-                    className="absolute inset-0 bg-cover bg-center opacity-70"
+                    className="absolute inset-0 bg-cover  opacity-70"
                     style={{ backgroundImage: `url(${blog.img})` }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />

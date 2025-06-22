@@ -107,7 +107,7 @@ const Navbar = () => {
             <div className="lg:flex p-2  hidden  justify-center  flex-row  w-full mx-auto ">
                 <ul className="flex flex-wrap  w-[95%] mx-auto justify-center gap-x-10 items-center  text-white font-semibold  relative">
                     <div className="flex items-center gap-4">
-                        <img src="https://i.ibb.co/Kxt1VLrP/ieeelogo.png" alt="IEEE Logo" className=" w-50 mr-4" />
+                        <img src="https://i.ibb.co/Kxt1VLrP/ieeelogo.png" alt="IEEE Logo" className="w-50 mr-4" />
                     </div>
                     <li><a href="/" className='md:text-xl text-2xl lg:text-[18px] '><span className={`hover:text-blue-300 ${isHomeActive
                         ? "text-white border-b-2 border-white 0"
@@ -346,7 +346,7 @@ const Navbar = () => {
             {/* Mobile navigation */}
             <div className="lg:hidden flex justify-between px-6 h-30  py-8 bg-[#045C99]">
                 <div className="flex items-center gap-4 ">
-                    <img src="https://i.ibb.co/Myw1pBH2/ieeelogo.png" alt="IEEE Logo" className="md:w-50 w-50" />
+                    <img src="https://i.ibb.co/Kxt1VLrP/ieeelogo.png" alt="IEEE Logo" className="md:w-50 w-50" />
                 </div>
                 <button
                     className="text-white md:text-3xl text-2xl lg:text-2xl  focus:outline-none"
@@ -361,7 +361,7 @@ const Navbar = () => {
                 <div className="lg:hidden bg-black text-white px-6 py-4 space-y-3">
                     <ul className="space-y-3 text-base font-semibold">
 
-                        <li><a href="#">Home</a></li>
+                        <li><Link to='/' >Home</Link></li>
 
                         <li>
                             <button onClick={() => setMobileSubMenu(mobileSubMenu === 'activities' ? null : 'activities')} className="w-full text-left">Activities</button>

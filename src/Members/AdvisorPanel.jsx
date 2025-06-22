@@ -6,7 +6,7 @@ const AdvisorPanel = () => {
             <section className="text-center mb-10">
                 <h1 className="text-3xl mt-4 font-bold text-[#045C99]">Current Advisory Panel</h1>
                 <p className="text-gray-600">Distinguished Advisors Supporting Our Mission</p>
-                <div className="flex flex-row justify-center gap-25  mt-6">
+                <div className="flex flex-row flex-wrap justify-center gap-25  mt-6">
                     <div className="p-6 text-center">
                         <div className="shadow-md p-4 mx-auto w-fit px-10">
                             <img src="https://i.ibb.co.com/5hpqrZbL/Mony-sir.jpg" alt="Sir" className="w-[200px] h-[200px] object-cover mx-auto mb-3" />

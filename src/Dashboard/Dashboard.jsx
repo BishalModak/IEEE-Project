@@ -474,7 +474,7 @@ const Dashboard = () => {
                                     <img
                                         src="/img/megazin1.png"
                                         alt="IEEE Magazine Cover"
-                                        className="h-40 w-full object-cover"
+                                        className="w-full "
                                     />
                                     <div className="p-4">
                                         <h3 className="text-lg font-semibold text-gray-800 mb-2">IEEE Spectrum - June 2025</h3>
@@ -554,15 +554,21 @@ const Dashboard = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {/* Upcoming Event Card */}
                                 <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
-                                    <div className="h-32 bg-gradient-to-r from-blue-500 to-cyan-500 relative">
+                                    {/* <div className="h-32 bg-gradient-to-r from-blue-500 to-cyan-500 relative">
                                         <div className="absolute top-2 right-2 bg-yellow-400 text-xs font-bold px-2 py-1 rounded">
                                             FEATURED
                                         </div>
                                         <div className="absolute bottom-2 left-2 bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded">
                                             UPCOMING
                                         </div>
+                                    </div> */}
+
+                                    <div className="">
+
+                                        <img src="../../public/img/ResearchBootcamp.jpg" alt="Event" className="w-full object-cover" />
+
                                     </div>
-                                    <div className="p-4">
+                                    <div className="p-4 ">
                                         <h3 className="text-lg font-semibold text-gray-800 mb-2">IEEE Technical Workshop 2025</h3>
                                         <div className="flex items-center text-sm text-gray-600 mb-3">
                                             <FaCalendarAlt className="mr-1" />
@@ -593,12 +599,18 @@ const Dashboard = () => {
 
                                 {/* Ongoing Event Card */}
                                 <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
-                                    <div className="h-32 bg-gradient-to-r from-purple-500 to-pink-500 relative">
+                                    {/* <div className="h-32 bg-gradient-to-r from-purple-500 to-pink-500 relative">
                                         <div className="absolute bottom-2 left-2 bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">
                                             ONGOING
                                         </div>
+                                    </div> */}
+
+                                    <div className="relative">
+
+                                        <img src="../../public/img/LandscapeImg.jpg" alt="Event" className="w-full h-auto object-cover" />
+
                                     </div>
-                                    <div className="p-4">
+                                    <div className="p-4 ">
                                         <h3 className="text-lg font-semibold text-gray-800 mb-2">Machine Learning Symposium</h3>
                                         <div className="flex items-center text-sm text-gray-600 mb-3">
                                             <FaCalendarAlt className="mr-1" />
